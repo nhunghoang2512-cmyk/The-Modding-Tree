@@ -39,6 +39,7 @@ function canGenPoints(){
 // Calculate points/sec!
 function getPointGen() {
 let gain = new Decimal(layers.a.eff())
+if (hasUpgrade('addition', 12)) gain = gain.times(upgradeEffect('addition', 12))
 	return gain
 }
 
