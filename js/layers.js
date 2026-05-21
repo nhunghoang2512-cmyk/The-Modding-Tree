@@ -12,7 +12,7 @@ addLayer("a", {
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.75, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -22,11 +22,13 @@ addLayer("a", {
     },
     eff() {
         let eff = player.a.points.add(1).log10().add(1)
+	    if(hasUpgrade("a",11)) eff = eff.pow(2)
         return eff
     },
     effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
     upgrades: {
         11: {
+			title: "1",
             description: "square base point gain",
             cost() { return new Decimal(5) },
             unlocked() { return true },
