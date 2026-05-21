@@ -21,7 +21,7 @@ addLayer("a", {
         return new Decimal(1)
     },
     eff() {
-        let eff = player.p.points.add(1).log10().add(1)
+        let eff = player.a.points.add(1).log10().add(1)
         return eff
     },
     effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
