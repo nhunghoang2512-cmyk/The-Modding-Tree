@@ -33,17 +33,6 @@ addLayer("a", {
             cost() { return new Decimal(5) },
             unlocked() { return true },
 		},
-        12: {
-            title: "2",
-            description: "addition points boost point.",
-            cost: new Decimal(15),
-            effect() {
-				exp = 0.2
-                let eff = player[this.layer].points.add(1).pow(exp)
-                return eff
-            },
-			unlocked() { return true },
-        },
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
