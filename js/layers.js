@@ -30,6 +30,8 @@ addLayer("a", {
             description: "square base point gain",
             cost() { return new Decimal(5) },
             unlocked() { return true },
+		},
+	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "a", description: "A: Reset for addition points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
