@@ -42,7 +42,7 @@ addLayer("a", {
                 let eff = player[this.layer].points.add(1).pow(exp)
                 return eff
             },
-			unlocked() { return hasUpgrade("addition", 11) },
+			unlocked() { return true },
         },
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
