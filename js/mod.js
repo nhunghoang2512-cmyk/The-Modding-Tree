@@ -38,7 +38,7 @@ function canGenPoints(){
 
 // Calculate points/sec!
 function getPointGen() {
-let gain = new Decimal(layers.p.eff())
+let gain = new Decimal(layers.a.eff())
 	return gain
 }
 
