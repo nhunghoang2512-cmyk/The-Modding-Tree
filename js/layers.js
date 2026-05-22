@@ -86,10 +86,10 @@ addLayer("a", {
             cost() { return new Decimal(5000) },
 		    effect() {
 			exp = 0.25
-        	return player.points.add(1).pow(exp)
+        	return player[this.layer].add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-            unlocked() { return hasUpgrade('a', 14) },
+            unlocked() { return hasUpgrade('a', 21) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
