@@ -73,7 +73,7 @@ addLayer("a", {
             description: "point boost itself.",
             cost() { return new Decimal(2500) },
 		    effect() {
-			exp = 0.1
+			exp = 0.25
         	return player.points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
