@@ -42,7 +42,7 @@ addLayer("a", {
         	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-            unlocked() { return hasUpgrade("addition", 11) },
+            unlocked() { return hasUpgrade("a", 11) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
