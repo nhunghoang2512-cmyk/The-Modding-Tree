@@ -15,7 +15,7 @@ addLayer("a", {
     exponent: 0.2, // Prestige currency exponent
     gainMult() {
     	let mult = new Decimal(1)
-		if (hasUpgrade('a', 13)) mult = mult.times(upgradeEffect('a', 13))
+		if (hasUpgrade('a', 13)) mult = mult.tetrate(upgradeEffect('a', 13))
 		if (hasUpgrade('a', 14)) mult = mult.times(5)
 		if (hasUpgrade('a', 22)) mult = mult.times(upgradeEffect('a', 22))
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
