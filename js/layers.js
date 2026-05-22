@@ -156,7 +156,11 @@ addLayer("m", {
     hotkeys: [
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return hasUpgrade('a', 24)}
+    layerShown(){
+        let visible = false
+        if (hasUpgrade('a', 24) || player.multiplication.unlocked) visible = true
+       return visible
+     },
 })
 
 
