@@ -22,12 +22,22 @@ addLayer("a", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    eff() {
-        let eff = player.a.points.add(1).log10().add(1)
-	    if(hasUpgrade("a",11)) eff = eff.pow(2)
-        return eff
+    main() {
+		expu = 0.35
+    	softcapDescription12 = ""
+		scpow = 0.5
+		aEffect = layers.a.eff()
+		if (aEffect.gte(new Decimal("10")) ) {
+		softcapDescription12 = " (Softcapped after 10)"
+    	}
     },
-    effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
+	effect() {
+		let eff = player.a.points.add(1).log10().add(1)
+		if(hasUpgrade("a",11)) eff = eff.pow(2)
+		eff = softcap(eff, new Decimal("10"), scpow)
+		return eff
+    },
+    effectDescription() { return `Base Points Gain ${format(layers.a.eff())} + softcapDescription12` },
     upgrades: {
         11: {
 			title: "1",
