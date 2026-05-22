@@ -42,7 +42,8 @@ let gain = new Decimal(layers.a.eff())
 if (hasUpgrade("a", 12)) gain = gain.times(upgradeEffect("a", 12))
 if (hasUpgrade("a", 14)) gain = gain.times(5)
 if (hasUpgrade("a", 21)) gain = gain.times(upgradeEffect("a", 21))
-if (hasUpgrade("a", 23)) gain = gain.pow(1.1)
+if (hasUpgrade("a", 23)) gain = gain.pow(1.25)
+if (hasUpgrade("a", 24)) gain = gain.times(100)
 	return gain
 }
 
