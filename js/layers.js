@@ -101,7 +101,7 @@ addLayer("a", {
         24: {
 			title: "8",
             description: "boost point by 100x, addition point by 10x and unlock a new layer.",
-            cost() { return new Decimal(250000) },
+            cost() { return new Decimal(1e7) },
             unlocked() { return hasUpgrade('a', 23) },
 		},
 	},
