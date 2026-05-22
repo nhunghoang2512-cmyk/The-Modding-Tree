@@ -19,7 +19,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 14)) mult = mult.times(5)
 		if (hasUpgrade('a', 22)) mult = mult.times(upgradeEffect('a', 22))
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
-		if (hasUpgrade('m', 11)) mult = mult.times(2)
+		if (hasMilestone('m', 0)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -144,13 +144,14 @@ addLayer("m", {
         layers.m.eff().gte(1e1000) ? " (softcapped)" : ""
     }`
 },
+    milestones:{
+        0: {
+            requirementDescription: "1 multiplication point",
+            effectDescription: "x5 point, x2 addition point gain.",
+            done() { return player.m.points.gte(1) }
+        },
+	},
     upgrades: {
-        11: {
-			title: "1",
-            description: "x5 point, x2 addition point gain.",
-            cost() { return new Decimal(1) },
-            unlocked() { return true },
-		},
 	},
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
