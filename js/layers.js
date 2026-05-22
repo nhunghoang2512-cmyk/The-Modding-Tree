@@ -158,7 +158,7 @@ addLayer("m", {
     ],
     layerShown(){
         let visible = false
-        if (hasUpgrade('a', 24) || player.multiplication.unlocked) visible = true
+        if (hasUpgrade('a', 24)) visible = true
        return visible
      },
 })
