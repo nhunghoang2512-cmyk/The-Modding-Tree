@@ -157,9 +157,7 @@ addLayer("m", {
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){
-        let visible = false
-        if (hasUpgrade('a', 24)) visible = true
-       return visible
+	{return hasUpgrade("a",24) || player.m.unlocked}
      },
 })
 
