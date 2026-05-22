@@ -14,8 +14,9 @@ addLayer("a", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.2, // Prestige currency exponent
     gainMult() {
-        let mult = new Decimal(1)
-        if (hasUpgrade('a', 13)) mult = mult.times(upgradeEffect('a', 13))
+    	let mult = new Decimal(1)
+		if (hasUpgrade('a', 13)) mult = mult.times(upgradeEffect('a', 13))
+		if (hasUpgrade('a', 14)) mult = mult.times(5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -36,7 +37,7 @@ addLayer("a", {
 		},
         12: {
 			title: "2",
-            description: "addition point boost base point gain.",
+            description: "addition point boost point gain.",
             cost() { return new Decimal(15) },
 		    effect() {
 			exp = 0.5
@@ -55,6 +56,12 @@ addLayer("a", {
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             unlocked() { return hasUpgrade("a", 12) },
+		},
+        14: {
+			title: "4",
+            description: "Boost points and addition point by 5x.",
+            cost() { return new Decimal(100) },
+            unlocked() { return hasUpgrade('a', 13) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
