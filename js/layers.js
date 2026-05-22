@@ -22,10 +22,10 @@ addLayer("a", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-	effect() {
-		let eff = player.a.points.add(1).log10().add(1)
-		if(hasUpgrade("a",11)) eff = eff.pow(2)
-		return eff
+    eff() {
+        let eff = player.a.points.add(1).log10().add(1)
+	    if(hasUpgrade("a",11)) eff = eff.pow(2)
+        return eff
     },
     effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
     upgrades: {
