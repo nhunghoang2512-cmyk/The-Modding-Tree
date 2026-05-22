@@ -19,6 +19,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 14)) mult = mult.times(5)
 		if (hasUpgrade('a', 22)) mult = mult.times(upgradeEffect('a', 22))
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
+		if (hasUpgrade('m', 11)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -38,7 +39,7 @@ addLayer("a", {
     upgrades: {
         11: {
 			title: "1",
-            description: "square base point gain.",
+            description: "square point gain.",
             cost() { return new Decimal(5) },
             unlocked() { return true },
 		},
@@ -121,7 +122,7 @@ addLayer("m", {
 		points: new Decimal(0),
     }},
     color: "#FF0000",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e18), // Can be a function that takes requirement increases into account
     resource: "multiplication points", // Name of prestige currency
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
@@ -135,19 +136,19 @@ addLayer("m", {
         return new Decimal(1)
     },
     eff() {
-        let eff = player.a.points.add(1).log10().add(1)
+        let eff = player.m.points.add(1).pow(0.15).add(1)
         return eff
     },
     effectDescription() {
-    return `Base Points Gain ${format(layers.a.eff())}${
-        layers.a.eff().gte(10) ? " (softcapped)" : ""
+    return `Boost Base Points Gain by ${format(layers.m.eff())}${
+        layers.b.eff().gte(1e1000) ? " (softcapped)" : ""
     }`
 },
     upgrades: {
         11: {
 			title: "1",
-            description: "square base point gain.",
-            cost() { return new Decimal(5) },
+            description: "x5 point, x2 addition point gain.",
+            cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
 	},
@@ -155,7 +156,7 @@ addLayer("m", {
     hotkeys: [
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return hasUpgrade('a', 24)}
 })
 
 
