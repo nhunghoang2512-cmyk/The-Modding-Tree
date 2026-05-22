@@ -33,6 +33,12 @@ addLayer("a", {
             cost() { return new Decimal(5) },
             unlocked() { return true },
 		},
+        12: {
+			title: "2",
+            description: "addition point boost base point gain.",
+            cost() { return new Decimal(5) },
+            unlocked() { return true },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
