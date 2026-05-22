@@ -36,7 +36,7 @@ addLayer("a", {
         12: {
 			title: "2",
             description: "addition point boost base point gain.",
-            cost() { return new Decimal(5) },
+            cost() { return new Decimal(15) },
 		    effect() {
 			exp = 0.5
         	return player[this.layer].points.add(1).pow(exp)
