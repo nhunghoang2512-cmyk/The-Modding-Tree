@@ -28,7 +28,11 @@ addLayer("a", {
 		eff = softcap(eff, new Decimal("10"), 0.25)
         return eff
     },
-    effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
+    effectDescription() {
+    return `Base Points Gain ${format(layers.a.eff())}${
+        layers.a.eff().gte(10) ? " (softcapped)" : ""
+    }`
+},
     upgrades: {
         11: {
 			title: "1",
