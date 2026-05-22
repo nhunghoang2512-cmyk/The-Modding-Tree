@@ -10,7 +10,6 @@ body {
 
 /* General text */
 h1, h2, h3, b, input {
-	display: inline;
 	font-family: 'MonoType';
 	src: url('MonospaceTypewriter.ttf');
 }
