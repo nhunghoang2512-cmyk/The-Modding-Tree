@@ -68,6 +68,17 @@ addLayer("a", {
             cost() { return new Decimal(100) },
             unlocked() { return hasUpgrade('a', 13) },
 		},
+        21: {
+			title: "5",
+            description: "point boost itself.",
+            cost() { return new Decimal(2500) },
+		    effect() {
+			exp = 0.1
+        	return player.points.add(1).pow(exp)
+    },
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            unlocked() { return hasUpgrade('a', 14) },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
