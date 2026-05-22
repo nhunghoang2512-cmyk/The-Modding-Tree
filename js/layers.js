@@ -25,6 +25,7 @@ addLayer("a", {
     eff() {
         let eff = player.a.points.add(1).log10().add(1)
 	    if(hasUpgrade("a",11)) eff = eff.pow(2)
+		eff = softcap(eff, new Decimal("10"), 0.25)
         return eff
     },
     effectDescription() { return `Base Points Gain ${format(layers.a.eff())}` },
