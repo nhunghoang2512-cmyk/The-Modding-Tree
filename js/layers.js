@@ -91,6 +91,12 @@ addLayer("a", {
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             unlocked() { return hasUpgrade('a', 21) },
 		},
+        23: {
+			title: "4",
+            description: "^1.1 point.",
+            cost() { return new Decimal(250000) },
+            unlocked() { return hasUpgrade('a', 22) },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
