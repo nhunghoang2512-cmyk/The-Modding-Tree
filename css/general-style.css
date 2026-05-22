@@ -10,8 +10,8 @@ body {
 
 /* General text */
 h1, h2, h3, b, input {
-	font-family: 'MonoType';
-	src: url('MonospaceTypewriter.ttf');
+	display: inline;
+	font-family: "Lucida Console", "Courier New", monospace
 }
 
 /* These are styles for different states of components. You can make layer-specific versions with .c.locked, for example */
