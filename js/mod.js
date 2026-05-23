@@ -45,6 +45,7 @@ if (hasUpgrade("a", 21)) gain = gain.times(upgradeEffect("a", 21))
 if (hasUpgrade("a", 23)) gain = gain.pow(1.25)
 if (hasUpgrade("a", 24)) gain = gain.times(100)
 if (hasMilestone("m", 0)) gain = gain.times(5)
+if (hasUpgrade("a", 31)) gain = gain.times(3)
 	return gain
 }
 
