@@ -191,6 +191,12 @@ addLayer("m", {
             unlocked() 	{return hasMilestone('m', 1) },
             done() { return player.m.points.gte(10) }
         },
+        3: {
+            requirementDescription: "20 multiplication point",
+            effectDescription: "unlock new upgrades.",
+            unlocked() 	{return hasMilestone('m', 2) },
+            done() { return player.m.points.gte(20) }
+        },
 	},
     upgrades: {
         11: {
