@@ -124,7 +124,7 @@ addLayer("a", {
 			title: "9",
             description: "boost point and addition point by 3x.",
             cost() { return new Decimal(2.5e12) },
-            unlocked() { return hasMilestone('m', 1) },
+            unlocked() { return hasMilestone('m', 1) && hasUpgrade('a', 24) },
 		},
         32: {
 			title: "10",
