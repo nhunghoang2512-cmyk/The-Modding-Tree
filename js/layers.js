@@ -54,19 +54,12 @@ addLayer("a", {
 		    effect() {
 			exp = 0.5
 	   		if(hasUpgrade("a",32)) exp = 0.6
-			let eff = player[this.layer].points.add(1).pow(exp)
-			eff = softcap(eff, new Decimal("1e50"), 0.25)
-        	return eff
+        	return player[this.layer].points.add(1).pow(exp)
     },
-			effectDisplay() {
-			return format(upgradeEffect(this.layer, this.id))+"x"+
-			(upgradeEffect(this.layer, this.id).gte(1e50)?" (softcapped)":"")
-			},
-
-			tooltip() {
-			return "addition points^"+exp+
-			(upgradeEffect(this.layer, this.id).gte(1e50)?" (softcapped)":"")
-			},
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: addition points^" + exp
+            },
             unlocked() { return hasUpgrade("a", 11) },
 		},
         13: {
@@ -76,19 +69,12 @@ addLayer("a", {
 		    effect() {
 			exp = 0.15
 	   		if(hasUpgrade("a",33)) exp = 0.2
-			let eff = player[this.layer].points.add(1).pow(exp)
-			eff = softcap(eff, new Decimal("1e25"), 0.25)
-        	return eff
+        	return player.points.add(1).pow(exp)
     },
-			effectDisplay() {
-			return format(upgradeEffect(this.layer, this.id))+"x"+
-			(upgradeEffect(this.layer, this.id).gte(1e25)?" (softcapped)":"")
-			},
-
-			tooltip() {
-			return "addition points^"+exp+
-			(upgradeEffect(this.layer, this.id).gte(1e25)?" (softcapped)":"")
-			},
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: points^" + exp
+            },
             unlocked() { return hasUpgrade("a", 12) },
 		},
         14: {
@@ -259,6 +245,3 @@ addLayer("m", {
 	{return hasUpgrade("a",24) || player.m.unlocked}
      },
 })
-
-
-
