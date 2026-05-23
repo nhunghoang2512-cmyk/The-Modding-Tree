@@ -21,7 +21,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
 		if (hasMilestone('m', 0)) mult = mult.times(2)
 		if (hasUpgrade('a', 31)) mult = mult.times(3)
-		if (hasMilestone('m', 1)) mult = mult.times(5)
+		if (hasMilestone('m', 2)) mult = mult.times(5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -124,7 +124,7 @@ addLayer("a", {
 			title: "9",
             description: "boost point and addition point by 3x.",
             cost() { return new Decimal(2.5e12) },
-            unlocked() { return hasUpgrade('m', 11) },
+            unlocked() { return hasMilestone('m', 1) },
 		},
         32: {
 			title: "10",
@@ -179,19 +179,19 @@ addLayer("m", {
             done() { return player.m.points.gte(1) }
         },
         1: {
+            requirementDescription: "3 multiplication point",
+            effectDescription: "unlock new upgrades.",
+            unlocked() { return hasMilestone('m', 0) },
+            done() { return player.m.points.gte(3) }
+        },
+        2: {
             requirementDescription: "10 multiplication point",
             effectDescription: "square this layer effect, x5 addition point, point.",
-            unlocked() { return hasUpgrade('a', 32) },
+            unlocked() { return hasMilestone('m', 1) },
             done() { return player.m.points.gte(10) }
         },
 	},
     upgrades: {
-        11: {
-			title: "1",
-            description: "unlock new upgrades.",
-            cost() { return new Decimal(3) },
-            unlocked() { return hasMilestone('m', 0) },
-		},
 	},
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
