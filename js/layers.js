@@ -179,8 +179,8 @@ addLayer("m", {
         1: {
             requirementDescription: "5 multiplication point",
             effectDescription: "square this layer effect, x5 addition point, point.",
-            done() { return player.m.points.gte(5) }
             unlocked() { return hasupgrade('a', 32) },
+            done() { return player.m.points.gte(5) }
         },
 	},
     upgrades: {
