@@ -97,7 +97,7 @@ addLayer("a", {
 		    effect() {
 			exp = 0.25
 	   		if(hasUpgrade("a",34)) exp = 0.3
-			let eff = player[this.layer].points.add(1).pow(exp)
+			let eff = player.points.add(1).pow(exp)
 			eff = softcap(eff, new Decimal("1e25"), 0.25)
         	return eff
     },
