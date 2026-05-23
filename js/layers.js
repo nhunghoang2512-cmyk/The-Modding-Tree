@@ -25,7 +25,9 @@ addLayer("a", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+		let exp = new Decimal(1)
+		if (hasUpgrade('a', 42)) exp = exp.times(1.1)
+        return exp
     },
     eff() {
         let eff = player.a.points.add(1).log10().add(1)
@@ -153,6 +155,12 @@ addLayer("a", {
             cost() { return new Decimal(1e35) },
             unlocked() { return hasUpgrade('a', 33) },
 		},
+        42: {
+			title: "14!",
+            description: "^1.1 P, AP, MP.",
+            cost() { return new Decimal(1e35) },
+            unlocked() { return hasUpgrade('a', 33) },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -182,7 +190,9 @@ addLayer("m", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+		let exp = new Decimal(1)
+		if (hasUpgrade('a', 42)) exp = exp.times(1.1)
+        return exp
     },
     eff() {
         let eff = player.m.points.add(1).pow(0.3)
