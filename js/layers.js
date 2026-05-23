@@ -180,7 +180,6 @@ addLayer("a", {
             unlocked() { return hasUpgrade('a', 33) },
 		},
 	},
-    branches: ["multiplication"], 
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "a", description: "A: Reset for addition points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
