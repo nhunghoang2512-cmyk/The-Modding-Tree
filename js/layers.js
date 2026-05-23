@@ -21,6 +21,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
 		if (hasMilestone('m', 0)) mult = mult.times(2)
 		if (hasUpgrade('a', 31)) mult = mult.times(3)
+		if (hasMilestone('m', 1)) mult = mult.times(5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -163,6 +164,7 @@ addLayer("m", {
     },
     eff() {
         let eff = player.m.points.add(1).pow(0.15)
+		if (hasMilestone('m', 0)) eff = eff.pow(2)
         return eff
     },
     effectDescription() {
