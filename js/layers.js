@@ -127,7 +127,7 @@ addLayer("a", {
 		},
         32: {
 			title: "10",
-            description: "2 use a better formula.",
+            description: "2 use a better formula, unlock new milestone.",
             cost() { return new Decimal(1e14) },
             unlocked() { return hasUpgrade('a', 31) },
 		},
@@ -175,6 +175,12 @@ addLayer("m", {
             requirementDescription: "1 multiplication point",
             effectDescription: "x5 point, x2 addition point gain.",
             done() { return player.m.points.gte(1) }
+        },
+        1: {
+            requirementDescription: "5 multiplication point",
+            effectDescription: "square this layer effect, x5 addition point, point.",
+            done() { return player.m.points.gte(5) }
+            unlocked() { return hasupgrade('a', 32) },
         },
 	},
     upgrades: {
