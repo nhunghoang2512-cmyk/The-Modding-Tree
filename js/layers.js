@@ -136,7 +136,7 @@ addLayer("m", {
         return new Decimal(1)
     },
     eff() {
-        let eff = player.m.points.add(1).pow(0.15).add(1)
+        let eff = player.m.points.add(1).pow(0.15)
         return eff
     },
     effectDescription() {
