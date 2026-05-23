@@ -21,7 +21,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
 		if (hasMilestone('m', 0)) mult = mult.times(2)
 		if (hasUpgrade('a', 31)) mult = mult.times(3)
-		if (hasMilestone('m', 2)) mult = mult.times(5)
+		if (hasMilestone('m', 2)) mult = mult.times(10)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -187,8 +187,8 @@ addLayer("m", {
         },
         2: {
             requirementDescription: "10 multiplication point",
-            effectDescription: "square this layer effect, x5 addition point, point.",
-            unlocked() 	{return hasMilestone('m', 2) },
+            effectDescription: "x10 addition point, point.",
+            unlocked() 	{return hasMilestone('m', 1) },
             done() { return player.m.points.gte(10) }
         },
 	},
