@@ -163,8 +163,8 @@ addLayer("m", {
         return new Decimal(1)
     },
     eff() {
-        let eff = player.m.points.add(1).pow(0.15)
-		if (hasMilestone('m', 0)) eff = eff.pow(2)
+        let eff = player.m.points.add(1).pow(0.3)
+		if (hasUpgrade('m', 11)) eff = eff.pow(3)
         return eff
     },
     effectDescription() {
@@ -187,11 +187,17 @@ addLayer("m", {
         2: {
             requirementDescription: "10 multiplication point",
             effectDescription: "square this layer effect, x5 addition point, point.",
-            unlocked() { return hasMilestone('m', 1) },
+            unlocked() { return hasUpgrade('a', 32) },
             done() { return player.m.points.gte(10) }
         },
 	},
     upgrades: {
+        11: {
+			title: "1",
+            description: "cube this layer effect.",
+            cost() { return new Decimal(5) },
+            unlocked() { return hasMilestone('m', 1) },
+		},
 	},
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
