@@ -128,7 +128,7 @@ addLayer("a", {
 		},
         32: {
 			title: "10",
-            description: "2 use a better formula, unlock new milestone.",
+            description: "2 use a better formula.",
             cost() { return new Decimal(1e14) },
             unlocked() { return hasUpgrade('a', 31) },
 		},
@@ -157,6 +157,7 @@ addLayer("m", {
     exponent: 0.01, // Prestige currency exponent
     gainMult() {
     	let mult = new Decimal(1)
+		if (hasUpgrade('m', 11)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -187,14 +188,14 @@ addLayer("m", {
         2: {
             requirementDescription: "10 multiplication point",
             effectDescription: "square this layer effect, x5 addition point, point.",
-            unlocked() 	{return hasUpgrade("a", 32) || player.milestone('m', 2).unlocked},
+            unlocked() 	{return hasMilestone('m', 2) },
             done() { return player.m.points.gte(10) }
         },
 	},
     upgrades: {
         11: {
 			title: "1",
-            description: "cube this layer effect.",
+            description: "cube this layer effect, x2 mp.",
             cost() { return new Decimal(5) },
             unlocked() { return hasMilestone('m', 1) },
 		},
