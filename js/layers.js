@@ -87,6 +87,7 @@ addLayer("a", {
             cost() { return new Decimal(2500) },
 		    effect() {
 			exp = 0.25
+	   		if(hasUpgrade("a",34)) exp = 0.3
         	return player.points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
@@ -134,10 +135,16 @@ addLayer("a", {
             unlocked() { return hasUpgrade('a', 31) },
 		},
         33: {
-			title: "10",
+			title: "11",
             description: "3 use a better formula.",
             cost() { return new Decimal(1e22) },
             unlocked() { return hasMilestone('m', 3) && hasUpgrade('a', 32) },
+		},
+        34: {
+			title: "12",
+            description: "5 use a better formula.",
+            cost() { return new Decimal(1e28) },
+            unlocked() { return hasUpgrade('a', 33) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
