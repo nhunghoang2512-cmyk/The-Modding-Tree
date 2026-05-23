@@ -152,6 +152,12 @@ addLayer("m", {
         },
 	},
     upgrades: {
+        11: {
+			title: "1",
+            description: "unlock new upgrades.",
+            cost() { return new Decimal(3) },
+            unlocked() { return hasMilestone('m', 0) },
+		},
 	},
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
