@@ -50,6 +50,7 @@ addLayer("a", {
             cost() { return new Decimal(15) },
 		    effect() {
 			exp = 0.5
+	   		if(hasUpgrade("a",32)) exp = 0.6
         	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
