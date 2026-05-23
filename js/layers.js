@@ -187,7 +187,7 @@ addLayer("m", {
         2: {
             requirementDescription: "10 multiplication point",
             effectDescription: "square this layer effect, x5 addition point, point.",
-            unlocked() { return hasUpgrade('a', 32) },
+            unlocked() 	{return hasUpgrade("a", 32) || player.milestone('m', 2).unlocked},
             done() { return player.m.points.gte(10) }
         },
 	},
