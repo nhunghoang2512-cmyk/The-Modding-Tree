@@ -262,7 +262,7 @@ addLayer("m", {
             unlocked() { return hasMilestone('m', 1) },
 		},
 	},
-    branches: ["addition"], 
+    branches: ["a"], 
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
