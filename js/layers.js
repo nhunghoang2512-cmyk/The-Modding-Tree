@@ -107,10 +107,16 @@ addLayer("a", {
             unlocked() { return hasUpgrade('a', 23) },
 		},
         31: {
-			title: "8",
+			title: "9",
             description: "boost point and addition point by 3x.",
             cost() { return new Decimal(2.5e12) },
             unlocked() { return hasUpgrade('m', 11) },
+		},
+        32: {
+			title: "10",
+            description: "2 use a better formula.",
+            cost() { return new Decimal(1e14) },
+            unlocked() { return hasUpgrade('a', 31) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
