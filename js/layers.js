@@ -76,12 +76,19 @@ addLayer("a", {
 		    effect() {
 			exp = 0.15
 	   		if(hasUpgrade("a",33)) exp = 0.2
-        	return player.points.add(1).pow(exp)
+			let eff = player[this.layer].points.add(1).pow(exp)
+			eff = softcap(eff, new Decimal("1e25"), 0.25)
+        	return eff
     },
-			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-            tooltip() {
-                return "Formula: points^" + exp
-            },
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"+
+			(upgradeEffect(this.layer, this.id).gte(1e25)?" (softcapped)":"")
+			},
+
+			tooltip() {
+			return "addition points^"+exp+
+			(upgradeEffect(this.layer, this.id).gte(1e25)?" (softcapped)":"")
+			},
             unlocked() { return hasUpgrade("a", 12) },
 		},
         14: {
