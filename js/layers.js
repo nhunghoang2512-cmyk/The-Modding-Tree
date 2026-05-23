@@ -13,6 +13,10 @@ addLayer("a", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.2, // Prestige currency exponent
+    passiveGeneration() {
+        if (hasMilestone('m', 4)) return 1
+        return 0
+    },
     gainMult() {
     	let mult = new Decimal(1)
 		if (hasUpgrade('a', 13)) mult = mult.times(upgradeEffect('a', 13))
@@ -241,6 +245,12 @@ addLayer("m", {
             effectDescription: "unlock new upgrades.",
             unlocked() 	{return hasMilestone('m', 2) },
             done() { return player.m.points.gte(20) }
+        },
+        4: {
+            requirementDescription: "60 multiplication point",
+            effectDescription: "Gain 100% AP every second.",
+            unlocked() 	{return hasMilestone('m', 3) },
+            done() { return player.m.points.gte(60) }
         },
 	},
     upgrades: {
