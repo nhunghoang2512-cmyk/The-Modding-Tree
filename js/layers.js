@@ -102,6 +102,7 @@ addLayer("a", {
             cost() { return new Decimal(5000) },
 		    effect() {
 			exp = 0.25
+	   		if(hasUpgrade("a",41)) exp = 0.3
         	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
@@ -144,6 +145,12 @@ addLayer("a", {
 			title: "12",
             description: "5 use a better formula.",
             cost() { return new Decimal(1e28) },
+            unlocked() { return hasUpgrade('a', 33) },
+		},
+        41: {
+			title: "13",
+            description: "6 use a better formula.",
+            cost() { return new Decimal(1e35) },
             unlocked() { return hasUpgrade('a', 33) },
 		},
 	},
