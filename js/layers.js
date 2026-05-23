@@ -20,6 +20,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 22)) mult = mult.times(upgradeEffect('a', 22))
 		if (hasUpgrade('a', 24)) mult = mult.times(10)
 		if (hasMilestone('m', 0)) mult = mult.times(2)
+		if (hasUpgrade('a', 31)) mult = mult.times(3)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -104,6 +105,12 @@ addLayer("a", {
             description: "boost point by 100x, addition point by 10x and unlock a new layer.",
             cost() { return new Decimal(1e7) },
             unlocked() { return hasUpgrade('a', 23) },
+		},
+        31: {
+			title: "8",
+            description: "boost point and addition point by 3x.",
+            cost() { return new Decimal(2.5e12) },
+            unlocked() { return hasUpgrade('m', 11) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
