@@ -107,7 +107,7 @@ addLayer("a", {
 			},
 
 			tooltip() {
-			return "addition points^"+exp+
+			return "points^"+exp+
 			(upgradeEffect(this.layer, this.id).gte(1e25)?" (softcapped)":"")
 			},
             unlocked() { return hasUpgrade('a', 14) },
