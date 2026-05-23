@@ -54,6 +54,9 @@ addLayer("a", {
         	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: addition points^" + exp
+            },
             unlocked() { return hasUpgrade("a", 11) },
 		},
         13: {
@@ -65,6 +68,9 @@ addLayer("a", {
         	return player.points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: points^" + exp
+            },
             unlocked() { return hasUpgrade("a", 12) },
 		},
         14: {
@@ -82,6 +88,9 @@ addLayer("a", {
         	return player.points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: points^" + exp
+            },
             unlocked() { return hasUpgrade('a', 14) },
 		},
         22: {
@@ -93,6 +102,9 @@ addLayer("a", {
         	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: addition points^" + exp
+            },
             unlocked() { return hasUpgrade('a', 21) },
 		},
         23: {
