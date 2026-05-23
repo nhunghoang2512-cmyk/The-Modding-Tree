@@ -176,7 +176,7 @@ addLayer("a", {
         42: {
 			title: "14!",
             description: "^1.1 P, AP, MP.",
-            cost() { return new Decimal(1e42) },
+            cost() { return new Decimal(1e41) },
             unlocked() { return hasUpgrade('a', 33) },
 		},
 	},
