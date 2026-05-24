@@ -188,7 +188,7 @@ addLayer("a", {
         43: {
 			title: "15",
             description: "+0.1^ AP gain formula.",
-            cost() { return new Decimal(1e123) },
+            cost() { return new Decimal(1e74) },
             unlocked() { return hasUpgrade('m', 14) && hasUpgrade('a', 42)},
 		},
 	},
