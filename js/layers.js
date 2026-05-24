@@ -12,7 +12,10 @@ addLayer("a", {
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.2, // Prestige currency exponent
+    exponent:{
+		let exp = 0.2
+		return exp
+	},
     passiveGeneration() {
         if (hasMilestone('m', 4)) return 1
         return 0
