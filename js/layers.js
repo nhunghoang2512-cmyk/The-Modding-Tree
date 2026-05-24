@@ -13,7 +13,7 @@ addLayer("a", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = 0.2
+		let exp = new Decimal(0.2)
 		if (hasUpgrade('m', 14)) exp = exp.add(0.05)
 		return exp
 	},
