@@ -260,6 +260,20 @@ addLayer("m", {
             cost() { return new Decimal(5) },
             unlocked() { return hasMilestone('m', 1) },
 		},
+        12: {
+			title: "2",
+            description: "MP boost itself.",
+            cost() { return new Decimal(100) },
+		    effect() {
+			exp = 0.25
+        	return player[this.layer].points.add(1).pow(exp)
+    },
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: MP^" + exp
+            },
+            unlocked() { return hasMilestone('m', 4) && hasUpgrade('m', 11)},
+		},
 	},
     branches: ["a"], 
     row: 1, // Row the layer is in on the tree (0 is the first row)
