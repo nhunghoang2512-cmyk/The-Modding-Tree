@@ -250,9 +250,15 @@ addLayer("m", {
         },
         4: {
             requirementDescription: "60 multiplication point",
-            effectDescription: "Gain 100% AP every second.",
+            effectDescription: "gain 100% AP every second.",
             unlocked() 	{return hasMilestone('m', 3) },
             done() { return player.m.points.gte(60) }
+        },
+        5: {
+            requirementDescription: "300 multiplication point",
+            effectDescription: "keep row 1-2 AP upgrades.",
+            unlocked() 	{return hasMilestone('m', 4) },
+            done() { return player.m.points.gte(300) }
         },
 	},
     upgrades: {
@@ -282,6 +288,10 @@ addLayer("m", {
     hotkeys: [
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+    doReset(resettingLayer){ // Triggers when this layer is being reset, along with the layer doing the resetting. Not triggered by lower layers resetting, but is by layers on the same row.
+        if(layers[resettingLayer].row > this.row) {
+        layerDataReset(this.layer)
+        if(hasMilestone("m", 5)) player.a.upgrades.push("11", "12", "13", "14", "21", "22", "23", "24")
     layerShown(){
 	{return hasUpgrade("a",24) || player.m.unlocked}
      },
