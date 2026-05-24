@@ -194,7 +194,7 @@ addLayer("a", {
         44: {
 			title: "16",
             description: "+0.01^ MP gain formula.",
-            cost() { return new Decimal(1e74) },
+            cost() { return new Decimal(1e97) },
             unlocked() { return hasUpgrade('m', 14) && hasUpgrade('a', 42)},
 		},
 	},
