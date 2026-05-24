@@ -14,7 +14,7 @@ addLayer("a", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
 		let exp = new Decimal(0.2)
-		if (hasUpgrade('m', 14)) exp = exp.add(0.05)
+		if (hasUpgrade('a', 43)) exp = exp.add(0.1)
 		return exp
 	},
     passiveGeneration() {
@@ -177,13 +177,19 @@ addLayer("a", {
 			title: "13",
             description: "6 use a better formula.",
             cost() { return new Decimal(1e35) },
-            unlocked() { return hasUpgrade('a', 33) },
+            unlocked() { return hasUpgrade('a', 34) },
 		},
         42: {
 			title: "14!",
             description: "^1.1 P, AP, MP.",
             cost() { return new Decimal(1e41) },
-            unlocked() { return hasUpgrade('a', 33) },
+            unlocked() { return hasUpgrade('a', 41) },
+		},
+        43: {
+			title: "15",
+            description: "+0.1^ AP gain formula.",
+            cost() { return new Decimal(1e123) },
+            unlocked() { return hasUpgrade('m', 14) && hasUpgrade('a', 42)},
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
@@ -302,7 +308,7 @@ addLayer("m", {
 		},
         14: {
 			title: "4",
-            description: "+0.05^ AP gain formula.",
+            description: "unlock new upgrades.",
             cost() { return new Decimal(25000) },
             unlocked() { return hasUpgrade('m', 13) },
 		},
