@@ -191,7 +191,8 @@ addLayer("a", {
         if(hasMilestone("m", 5)) player.a.upgrades.push("11", "12", "13", "14", "21", "22", "23", "24")
 		}
 	}
-    layerShown(){return true}
+    layerShown(){{return true}
+	}
 })
 
 addLayer("m", {
