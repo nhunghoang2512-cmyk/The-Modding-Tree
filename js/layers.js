@@ -27,6 +27,7 @@ addLayer("a", {
 		if (hasUpgrade('a', 31)) mult = mult.times(3)
 		if (hasMilestone('m', 2)) mult = mult.times(10)
 		if (hasUpgrade('m', 12)) mult = mult.times(upgradeEffect('m', 12))
+		if (hasUpgrade('m', 13)) mult = mult.times(10)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -213,6 +214,7 @@ addLayer("m", {
     	let mult = new Decimal(1)
 		if (hasUpgrade('m', 11)) mult = mult.times(2)
 		if (hasUpgrade('m', 12)) mult = mult.times(upgradeEffect('m', 12))
+		if (hasUpgrade('m', 13)) mult = mult.times(5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -287,6 +289,12 @@ addLayer("m", {
                 return "Formula: MP^" + exp
             },
             unlocked() { return hasMilestone('m', 4) && hasUpgrade('m', 11)},
+		},
+        13: {
+			title: "3",
+            description: "x100 point (base point), x10 AP, x5 MP.",
+            cost() { return new Decimal(500) },
+            unlocked() { return hasMilestone('m', 5) },
 		},
 	},
     branches: ["a"], 
