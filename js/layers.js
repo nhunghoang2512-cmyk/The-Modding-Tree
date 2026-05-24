@@ -26,6 +26,7 @@ addLayer("a", {
 		if (hasMilestone('m', 0)) mult = mult.times(2)
 		if (hasUpgrade('a', 31)) mult = mult.times(3)
 		if (hasMilestone('m', 2)) mult = mult.times(10)
+		if (hasUpgrade('m', 12)) mult = mult.times(upgradeEffect('m', 12))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -263,7 +264,7 @@ addLayer("m", {
 		},
         12: {
 			title: "2",
-            description: "MP boost itself.",
+            description: "MP boost itself, AP, P.",
             cost() { return new Decimal(100) },
 		    effect() {
 			exp = 0.25
