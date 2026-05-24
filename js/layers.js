@@ -191,6 +191,12 @@ addLayer("a", {
             cost() { return new Decimal(1e74) },
             unlocked() { return hasUpgrade('m', 14) && hasUpgrade('a', 42)},
 		},
+        44: {
+			title: "16",
+            description: "+0.01^ MP gain formula.",
+            cost() { return new Decimal(1e74) },
+            unlocked() { return hasUpgrade('m', 14) && hasUpgrade('a', 42)},
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -219,7 +225,11 @@ addLayer("m", {
     baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.01, // Prestige currency exponent
+	exponent() {
+		let exp = new Decimal(0.01)
+		if (hasUpgrade('a', 44)) exp = exp.add(0.01)
+		return exp
+	},
     gainMult() {
     	let mult = new Decimal(1)
 		if (hasUpgrade('m', 11)) mult = mult.times(2)
