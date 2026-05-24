@@ -185,6 +185,10 @@ addLayer("a", {
     hotkeys: [
         {key: "a", description: "A: Reset for addition points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+    doReset(resettingLayer){ // Triggers when this layer is being reset, along with the layer doing the resetting. Not triggered by lower layers resetting, but is by layers on the same row.
+        if(layers[resettingLayer].row > this.row) {
+        layerDataReset(this.layer)
+        if(hasMilestone("m", 5)) player.a.upgrades.push("11", "12", "13", "14", "21", "22", "23", "24")
     layerShown(){return true}
 })
 
@@ -288,10 +292,6 @@ addLayer("m", {
     hotkeys: [
         {key: "m", description: "M: Reset for multiplication points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    doReset(resettingLayer){ // Triggers when this layer is being reset, along with the layer doing the resetting. Not triggered by lower layers resetting, but is by layers on the same row.
-        if(layers[resettingLayer].row > this.row) {
-        layerDataReset(this.layer)
-        if(hasMilestone("m", 5)) player.a.upgrades.push("11", "12", "13", "14", "21", "22", "23", "24")
     layerShown(){
 	{return hasUpgrade("a",24) || player.m.unlocked}
      },
