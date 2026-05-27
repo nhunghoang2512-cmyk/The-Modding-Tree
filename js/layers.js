@@ -332,3 +332,53 @@ addLayer("m", {
 	{return hasUpgrade("a",24) || player.m.unlocked}
      },
 })
+
+addLayer("e", {
+    name: "exponentiation", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "^", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#f8b337",
+    requires: new Decimal(1e100), // Can be a function that takes requirement increases into account
+    resource: "xponentiation points", // Name of prestige currency
+    baseResource: "addition points", // Name of resource prestige is based on
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+	exponent() {
+		let exp = new Decimal(0.001)
+		return exp
+	},
+    gainMult() {
+    	let mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+		let exp = new Decimal(1)
+        return exp
+    },
+    eff() {
+        let eff = (player.e.points.add(1).log10().add(1)).pow(0.2)
+		eff = softcap(eff, new Decimal("2"), 0.1)
+        return eff
+    },
+    effectDescription() {
+    return `Boost Base Points Gain by ${format(layers.e.eff())}${
+        layers.m.eff().gte(2) ? " (softcapped)" : ""
+    }`
+},
+    milestones:{
+	},
+    upgrades: {
+	},
+    branches: ["m"], 
+    row: 2, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "e", description: "E: Reset for exponentiation points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){
+	{return hasUpgrade("a",24) || player.m.unlocked}
+     },
+})
