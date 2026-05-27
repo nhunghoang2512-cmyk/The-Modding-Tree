@@ -19,6 +19,7 @@ addLayer("a", {
 	},
     passiveGeneration() {
         if (hasMilestone('m', 4)) return 1
+        if (hasMilestone('e', 0)) return 10000
         return 0
     },
     gainMult() {
@@ -343,7 +344,7 @@ addLayer("e", {
     }},
     color: "#f8b337",
     requires: new Decimal(1e100), // Can be a function that takes requirement increases into account
-    resource: "xponentiation points", // Name of prestige currency
+    resource: "exponentiation points", // Name of prestige currency
     baseResource: "addition points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -370,6 +371,11 @@ addLayer("e", {
     }`
 },
     milestones:{
+        0: {
+            requirementDescription: "1 multiplication point",
+            effectDescription: "gain 1,000,000% AP every second.",
+            done() { return player.e.points.gte(1) }
+        },
 	},
     upgrades: {
 	},
