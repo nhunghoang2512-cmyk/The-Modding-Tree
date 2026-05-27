@@ -18,8 +18,8 @@ addLayer("a", {
 		return exp
 	},
     passiveGeneration() {
-        if (hasMilestone('m', 4)) return 1
         if (hasMilestone('e', 0)) return 10000
+        if (hasMilestone('m', 4)) return 1
         return 0
     },
     gainMult() {
