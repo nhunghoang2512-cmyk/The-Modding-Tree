@@ -33,6 +33,7 @@ addLayer("a", {
 		if (hasMilestone('m', 2)) mult = mult.times(10)
 		if (hasUpgrade('m', 12)) mult = mult.times(upgradeEffect('m', 12))
 		if (hasUpgrade('m', 13)) mult = mult.times(10)
+		if (hasMilestone('e', 1)) mult = mult.times(100)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -236,6 +237,7 @@ addLayer("m", {
 		if (hasUpgrade('m', 11)) mult = mult.times(2)
 		if (hasUpgrade('m', 12)) mult = mult.times(upgradeEffect('m', 12))
 		if (hasUpgrade('m', 13)) mult = mult.times(5)
+		if (hasMilestone('e', 1)) mult = mult.times(10)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -354,6 +356,7 @@ addLayer("e", {
 	},
     gainMult() {
     	let mult = new Decimal(1)
+		if (hasMilestone('e', 1)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -375,6 +378,11 @@ addLayer("e", {
             requirementDescription: "1 multiplication point",
             effectDescription: "gain 1,000,000% AP every second.",
             done() { return player.e.points.gte(1) }
+        },
+        1: {
+            requirementDescription: "2 multiplication point",
+            effectDescription: "x10k point, x100 AP, x10MP, x2 EP.",
+            done() { return player.e.points.gte(2) }
         },
 	},
     upgrades: {
