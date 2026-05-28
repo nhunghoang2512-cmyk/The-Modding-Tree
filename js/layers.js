@@ -366,8 +366,8 @@ addLayer("e", {
         return eff
     },
     effectDescription() {
-    return `Boost Base Points Gain by ${format(layers.e.eff())}${
-        layers.m.eff().gte(2) ? " (softcapped)" : ""
+    return `Raise Base Points Gain by ${format(layers.e.eff())}${
+        layers.e.eff().gte(2) ? " (softcapped)" : ""
     }`
 },
     milestones:{
