@@ -20,7 +20,7 @@ addLayer("b", {
         return 0
     },
     gainMult() {
-		let mult = new decimal(1)
+		let mult = new Decimal(1)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
