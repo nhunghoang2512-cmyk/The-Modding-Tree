@@ -33,7 +33,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	return hasMilestone('b', 0)
 }
 
 // Calculate points/sec!
