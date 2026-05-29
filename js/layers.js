@@ -4,16 +4,16 @@ addLayer("b", {
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		points: new Decimal(0),
+		points: new Decimal(0).sub(1),
     }},
     color: "#00000",
-    requires: new Decimal(1000), // Can be a function that takes requirement increases into account
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "bigbang", // Name of prestige currency
     baseResource: "atoms", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = new Decimal(1e1000)
+		let exp = new Decimal(1)
 		exp = exp.times(player.points)
 		exp = exp.pow(player.points)
 		return exp
