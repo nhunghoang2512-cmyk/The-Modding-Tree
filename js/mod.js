@@ -38,7 +38,7 @@ function canGenPoints(){
 
 // Calculate points/sec!
 function getPointGen() {
-let gain = new decimal (1)
+let gain = new Decimal(1)
 return gain
 }
 
