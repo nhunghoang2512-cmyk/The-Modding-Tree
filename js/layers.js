@@ -14,7 +14,8 @@ addLayer("b", {
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
 		let exp = new Decimal(1)
-		exp = exp.div(2).pow(player.points)
+		exp = exp.div(2)
+		exp = exp.pow(player.points)
 		return exp
 	},
     passiveGeneration() {
