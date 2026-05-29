@@ -33,12 +33,13 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return hasMilestone('b', 0)
+	return true
 }
 
 // Calculate points/sec!
 function getPointGen() {
-let gain = new Decimal(1)
+let gain = new Decimal(0)
+if (hasMilestone("b", 0)) gain = gain.add(1)
 return gain
 }
 
