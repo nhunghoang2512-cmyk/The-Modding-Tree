@@ -7,13 +7,13 @@ addLayer("b", {
 		points: new Decimal(0),
     }},
     color: "#00000",
-    requires: new Decimal(15), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1000), // Can be a function that takes requirement increases into account
     resource: "bigbang", // Name of prestige currency
     baseResource: "atoms", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = new Decimal(1)
+		let exp = new Decimal(1e1000)
 		exp = exp.times(player.points)
 		exp = exp.pow(player.points)
 		return exp
