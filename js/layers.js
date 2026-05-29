@@ -27,6 +27,13 @@ addLayer("b", {
 		let exp = new Decimal(1)
         return exp
     },
+    milestones: {
+        0: {
+            requirementDescription: "the first bigbang",
+            effectDescription: "start gaining atoms.",
+            done() { return player.b.points.gte(1) }
+        },
+	},
     upgrades: {
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
