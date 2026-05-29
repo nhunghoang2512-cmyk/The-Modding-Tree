@@ -4,7 +4,7 @@ addLayer("b", {
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		points: new Decimal(0).sub(1),
+		points: new Decimal(0),
     }},
     color: "#00000",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
@@ -13,9 +13,7 @@ addLayer("b", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = new Decimal(1)
-		exp = exp.times(player.points)
-		exp = exp.pow(player.points)
+		let exp = new Decimal(0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
 		return exp
 	},
     passiveGeneration() {
