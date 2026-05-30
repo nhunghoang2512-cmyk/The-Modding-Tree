@@ -14,7 +14,7 @@ addLayer("b", {
 		}
 
 		style.background = "#4c3e8c";
-		style.width = "200px";
+		style.width = "500px";
 		style.height = "125px";
 		style["font-size"] = "50px";
 		return style;
