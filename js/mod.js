@@ -43,6 +43,7 @@ if (hasMilestone("b", 0)) gain = gain.add(1)
 gain = gain.times(layers.b.eff())
 if (hasUpgrade("s", 11)) gain = gain.times(5)
 if (hasUpgrade("s", 12)) gain = gain.times(25)
+if (hasUpgrade("s", 13)) gain = gain.times(upgradeEffect("s", 13))
 return gain
 }
 
