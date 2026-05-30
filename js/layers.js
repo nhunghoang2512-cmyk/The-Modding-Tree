@@ -12,7 +12,7 @@ addLayer("b", {
     baseResource: "atoms", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-	base: new Decimal(1e100).pow(2/7),
+	base: new Decimal(1e100).pow(5/7),
 	exponent() {
 		let exp = new Decimal(2).pow(1.3333333333333333333333333333333)
 		return exp
