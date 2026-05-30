@@ -42,6 +42,7 @@ addLayer("b", {
     },
     eff() {
         let eff = player.points.add(1).pow(0.9)
+	    if(hasMilestone("b", 1)) eff = player.points.add(1).pow(0.95)
         return eff
     },
     milestones: {
@@ -49,6 +50,11 @@ addLayer("b", {
             requirementDescription: "the first bigbang",
             effectDescription: "start gaining atoms.",
             done() { return player.b.points.gte(1) }
+        },
+        1: {
+            requirementDescription: "the second bigbang",
+            effectDescription: "unlock stardust, stronger inflation.",
+            done() { return player.b.points.gte(2) }
         },
 	},
     upgrades: {
