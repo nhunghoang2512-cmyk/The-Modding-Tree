@@ -8,6 +8,11 @@ addLayer("b", {
     }},
     color: "#4c3e8c",
 	nodeStyle() {
+		const style = {};
+		if (options.emojisEnabled) {
+			style.color = "white";
+		}
+
 		style.background = "#4c3e8c";
 		style.width = "200px";
 		style.height = "125px";
