@@ -1,7 +1,7 @@
 /* Tree nodes, button nodes, and side layers */
 .treeNode {
-	height: 100px;
-	width: 100px;
+	height: 1000px;
+	width: 1000px;
 	border: var(--hqProperty1);
 	border-color: rgba(0, 0, 0, 0.125);
 	border-radius: 50%;
@@ -20,8 +20,8 @@
 }
 
 .treeButton {
-	height: 100px;
-	width: 100px;
+	height: 1000px;
+	width: 1000px;
 	border: var(--hqProperty1);
 	border-color: rgba(0, 0, 0, 0.125);
 	border-radius: 33%;
