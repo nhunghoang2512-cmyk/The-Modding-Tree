@@ -21,6 +21,7 @@ addLayer("s", {
     },
     gainMult() {
 		let mult = new Decimal(1)
+		if (hasUpgrade("s", 14)) mult = mult.times(upgradeEffect("s", 14))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
