@@ -3,7 +3,7 @@ addLayer("s", {
     symbol: "✨", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
-        unlocked: true,
+        unlocked: false,
 		points: new Decimal(0),
     }},
     color: "#a6a377",
@@ -32,20 +32,34 @@ addLayer("s", {
     upgrades: {
         11: {
 			title: "1",
-            description: "x5 point.",
+            description: "x5 atoms.",
             cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
         12: {
 			title: "2",
-            description: "x25 point.",
+            description: "x25 atoms.",
             cost() { return new Decimal(5) },
-            unlocked() { return true },
+            unlocked() { return hasUpgrade("s", 11) },
+		},
+        13: {
+			title: "3",
+            description: "stardust boost atoms gain.",
+            cost() { return new Decimal(50) },
+		    effect() {
+			exp = 0.5
+        	return player.points.add(1).pow(exp)
+    },
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: SD^" + exp
+            },
+            unlocked() { return hasUpgrade("s", 12) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "s", description: "S: Reset for stardust", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true},
+    layerShown(){return hasMilestone('b', 1)},
 })
