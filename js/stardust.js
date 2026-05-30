@@ -76,7 +76,7 @@ addLayer("s", {
             description: "x10 atoms per bigbang.",
             cost() { return new Decimal(30000) },
 		    effect() {
-			exp = 10
+			exp = new Decimal(10)
         	return exp.pow(player.b.points)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
