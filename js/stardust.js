@@ -90,7 +90,7 @@ addLayer("s", {
 		},
         22: {
 			title: "7",
-            description: "^1.05 atoms.",
+            description: "^1.1 atoms.",
             cost() { return new Decimal(5e9) },
             unlocked() { return hasUpgrade("s", 21) },
 		},
