@@ -1,10 +1,10 @@
 /* Tree nodes, button nodes, and side layers */
 .treeNode {
-	height: 100px;
-	width: 100px;
+	height: 200px;
+	width: 200px;
 	border: var(--hqProperty1);
 	border-color: rgba(0, 0, 0, 0.125);
-	border-radius: 50%;
+	border-radius: 0%;
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
 	font-family: "Lucida Console", "Courier New", monospace;
@@ -20,11 +20,11 @@
 }
 
 .treeButton {
-	height: 200px;
-	width: 200px;
+	height: 100px;
+	width: 100px;
 	border: var(--hqProperty1);
 	border-color: rgba(0, 0, 0, 0.125);
-	border-radius: 13%;
+	border-radius: 33%;
 	box-shadow: var(--hqProperty2a), var(--hqProperty2b);
 	font-size: 40px;
 	font-family: "Lucida Console", "Courier New", monospace;
