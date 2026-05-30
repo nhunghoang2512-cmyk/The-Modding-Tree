@@ -7,6 +7,13 @@ addLayer("b", {
 		points: new Decimal(0),
     }},
     color: "#4c3e8c",
+	nodeStyle() {
+		style.background = "#4c3e8c";
+		style.width = "200px";
+		style.height = "125px";
+		style["font-size"] = "50px";
+		return style;
+	},
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "bigbang", // Name of prestige currency
     baseResource: "atoms", // Name of resource prestige is based on
