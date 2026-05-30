@@ -43,7 +43,9 @@ addLayer("b", {
     eff() {
         let eff = player.points.add(1).pow(0.9)
 	    if(hasMilestone("b", 1)) eff = player.points.add(1).pow(0.95)
-		eff = softcap(eff, new Decimal("1e10"), 0.25)
+		let sc = new Decimal(0.25)
+	    if(hasUpgrade("s", 21)) sc = sc.and(0.05)
+		eff = softcap(eff, new Decimal("1e10"), sc)
         return eff
     },
     milestones: {
