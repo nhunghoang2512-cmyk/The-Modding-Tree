@@ -31,9 +31,15 @@ addLayer("s", {
 	},
     upgrades: {
         11: {
-			      title: "1",
+			title: "1",
             description: "x5 point.",
             cost() { return new Decimal(1) },
+            unlocked() { return true },
+		},
+        12: {
+			title: "2",
+            description: "x25 point.",
+            cost() { return new Decimal(5) },
             unlocked() { return true },
 		},
 	},
