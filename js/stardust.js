@@ -52,9 +52,23 @@ addLayer("s", {
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             tooltip() {
-                return "Formula: SD^" + exp
+                return "Formula: SD ^" + exp
             },
             unlocked() { return hasUpgrade("s", 12) },
+		},
+        14: {
+			title: "4",
+            description: "atoms boost stardust gain.",
+            cost() { return new Decimal(200) },
+		    effect() {
+			exp = 0.1
+        	return player.points.add(1).pow(exp)
+    },
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            tooltip() {
+                return "Formula: Atoms ^" + exp
+            },
+            unlocked() { return hasUpgrade("s", 13) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
