@@ -82,6 +82,12 @@ addLayer("s", {
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             unlocked() { return hasUpgrade("s", 13) },
 		},
+        21: {
+			title: "6",
+            description: "stronger inflation.",
+            cost() { return new Decimal(3e7) },
+            unlocked() { return true },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
