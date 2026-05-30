@@ -14,7 +14,7 @@ addLayer("b", {
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	base: 1e100,
 	exponent() {
-		let exp = new Decimal(2)
+		let exp = new Decimal(2).pow(1/3).pow(4)
 		return exp
 	},
     passiveGeneration() {
@@ -27,6 +27,10 @@ addLayer("b", {
     gainExp() { // Calculate the exponent on main currency from bonuses
 		let exp = new Decimal(1)
         return exp
+    },
+    eff() {
+        let eff = player.points.add(1).pow(0.9)
+        return eff
     },
     milestones: {
         0: {
