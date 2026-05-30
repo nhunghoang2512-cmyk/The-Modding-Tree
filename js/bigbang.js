@@ -60,6 +60,7 @@ addLayer("b", {
 	},
     upgrades: {
 	},
+    branches: ["s"],
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "b", description: "B: Reset for bigbang", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
