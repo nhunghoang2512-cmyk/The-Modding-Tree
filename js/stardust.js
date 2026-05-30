@@ -71,6 +71,17 @@ addLayer("s", {
             },
             unlocked() { return hasUpgrade("s", 13) },
 		},
+        15: {
+			title: "5",
+            description: "x10 atoms per bigbang.",
+            cost() { return new Decimal(30000) },
+		    effect() {
+			exp = 10
+        	return exp.pow(player.b.points)
+    },
+			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            unlocked() { return hasUpgrade("s", 13) },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
