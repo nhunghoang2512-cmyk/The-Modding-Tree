@@ -80,13 +80,19 @@ addLayer("s", {
         	return exp.pow(player.b.points)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-            unlocked() { return hasUpgrade("s", 13) },
+            unlocked() { return hasUpgrade("s", 14) },
 		},
         21: {
 			title: "6",
             description: "stronger inflation.",
             cost() { return new Decimal(3e7) },
-            unlocked() { return true },
+            unlocked() { return hasUpgrade("s", 15) },
+		},
+        22: {
+			title: "7",
+            description: "^1.05 atoms.",
+            cost() { return new Decimal(5e9) },
+            unlocked() { return hasUpgrade("s", 21) },
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
