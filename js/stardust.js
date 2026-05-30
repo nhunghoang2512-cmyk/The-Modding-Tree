@@ -48,7 +48,7 @@ addLayer("s", {
             cost() { return new Decimal(50) },
 		    effect() {
 			exp = 0.5
-        	return player.points.add(1).pow(exp)
+        	return player[this.layer].points.add(1).pow(exp)
     },
 			effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             tooltip() {
