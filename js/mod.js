@@ -48,6 +48,13 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
+	function() {
+		display = ""
+		if ((player.points.lt(1e18))) {
+			display = display + "Your universe size is " + notationChooser(player.points.div(new Decimal(1e9))) + " graviton."
+		}
+		return display
+	},
 ]
 
 // Determines when the game "ends"
