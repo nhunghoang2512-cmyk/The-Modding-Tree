@@ -56,7 +56,7 @@ var displayThings = [
     			display += "Your universe size is " + graviton.toString() + " graviton."
 			} else {
     			display += "Your universe size is " + format(graviton, 2) + " graviton."
-			},
+			}
 		},
 		return display
 	},
