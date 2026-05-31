@@ -8,6 +8,13 @@ addLayer("g", {
     }},
     color: "#a6a377",
 	image: "https://raw.githubusercontent.com/nhunghoang2512-cmyk/The-Modding-Tree/mine/Screenshot%202026-05-31%20220428.png?v=1",
+	nodeStyle() {
+    return {
+        "background-size": "contain",
+        "background-repeat": "no-repeat",
+        "background-position": "center",
+    }
+},
     requires: new Decimal(1e9), // Can be a function that takes requirement increases into account
     resource: "graviton", // Name of prestige currency
     baseResource: "planck length", // Name of resource prestige is based on
