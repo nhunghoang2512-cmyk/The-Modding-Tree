@@ -33,6 +33,19 @@ addLayer("g", {
 	},
     buyables: {
 	},
+	prestigeButtonText() {
+    let gain = getResetGain(this.layer)
+    let req = getNextAt(this.layer)
+
+    let gainText = gain.lt(1)
+        ? gain.toString()
+        : format(gain)
+
+    return `
+        Reset for +${gainText} graviton<br><br>
+        Next at ${format(req)} planck length
+    `
+	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
