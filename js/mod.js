@@ -57,9 +57,9 @@ var displayThings = [
 			} else {
     			display += "Your universe size is " + format(graviton, 2) + " graviton."
 			}
-		},
+		}
 		return display
-	},
+	}
 ]
 
 // Determines when the game "ends"
