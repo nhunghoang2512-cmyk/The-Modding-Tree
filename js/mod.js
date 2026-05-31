@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The ??? Tree",
 	author: "nobody",
-	pointsName: "atoms",
+	pointsName: "planck length",
 	modFiles: ["bigbang.js", "stardust.js", "tree.js"],
 
 	discordName: "",
