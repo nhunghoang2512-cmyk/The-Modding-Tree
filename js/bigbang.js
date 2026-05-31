@@ -44,6 +44,7 @@ addLayer("b", {
 		let exp = new Decimal(0.9)
 	    if(hasMilestone("b", 1)) exp = exp.add(0.05)
 	    if(hasUpgrade("s", 21)) exp = exp.add(0.05)
+	    if(hasMilestone("b", 2)) exp = exp.add(0.1)
         let eff = player.points.add(1).pow(exp)
 		let sc = new Decimal(0.25)
 	    if(hasUpgrade("s", 21)) sc = sc.add(0.1)
