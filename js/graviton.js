@@ -20,7 +20,7 @@ addLayer("g", {
         return 0
     },
     gainMult() {
-		let mult = new Decimal(1e-8)
+		let mult = new Decimal(1)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -33,25 +33,6 @@ addLayer("g", {
 	},
     buyables: {
 	},
-	prestigeButtonText() {
-    let gain = tmp[this.layer].resetGain
-    let req = tmp[this.layer].nextAt
-
-    let gainText = "0"
-
-    if (gain !== undefined && gain !== null) {
-        if (gain.toString && gain.toString().includes("e-")) {
-            gainText = gain.toString()
-        } else {
-            gainText = formatSmall(gain)
-        }
-    }
-
-    return "Reset for +" + gainText +
-           " graviton<br><br>Next at " +
-           format(req) +
-           " planck length"
-},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
