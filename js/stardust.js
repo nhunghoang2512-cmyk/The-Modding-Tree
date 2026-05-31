@@ -106,7 +106,7 @@ addLayer("s", {
 				let mult = base.pow(exp)
 				cost = cost.times(mult)
 				return cost},//x is the amount of buyables you have
-        	canAfford() { return player.a.points.gte(this.cost())},
+        	canAfford() { return player.s.points.gte(this.cost())},
         	buy() {
            		player.s.points = player.s.points.sub(this.cost())
            		setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
