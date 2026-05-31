@@ -28,6 +28,21 @@ addLayer("g", {
         return exp
     },
     milestones: {
+        0: {
+            requirementDescription: "10 pl",
+            effectDescription: "x1000 pl.",
+            done() { return player.points.gte(10) }
+        },
+        1: {
+            requirementDescription: "10,000 pl",
+            effectDescription: "x1000 pl.",
+            done() { return player.points.gte(10000) }
+        },
+        2: {
+            requirementDescription: "10,000,000 pl",
+            effectDescription: "x1000 pl.",
+            done() { return player.points.gte(10e6) }
+        },
 	},
     upgrades: {
 	},
