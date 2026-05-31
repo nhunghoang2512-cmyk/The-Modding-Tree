@@ -6,7 +6,7 @@ addLayer("g", {
         unlocked: false,
 		points: new Decimal(0),
     }},
-    color: "#a6a377",
+    color: "black",
 	image: "https://raw.githubusercontent.com/nhunghoang2512-cmyk/The-Modding-Tree/mine/Screenshot%202026-05-31%20220428.png?v=1",
 	nodeStyle() {
     return {
