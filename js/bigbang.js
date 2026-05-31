@@ -61,6 +61,11 @@ addLayer("b", {
             effectDescription: "unlock stardust, stronger inflation.",
             done() { return player.b.points.gte(2) }
         },
+        2: {
+            requirementDescription: "the third bigbang",
+            effectDescription: "unlock buyable, x2 atoms, stardusts, stronger inflation.",
+            done() { return player.b.points.gte(2) }
+        },
 	},
     upgrades: {
 	},
