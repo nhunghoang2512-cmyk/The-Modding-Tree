@@ -45,6 +45,23 @@ addLayer("g", {
         },
 	},
     upgrades: {
+        11: {
+			title: "1",
+            description: "x2 pl gain.",
+            cost() { return new Decimal(5) },
+            unlocked() { return true },
+		},
+        12: {
+			title: "2",
+            description: "graviton boost pl gain.",
+            cost() { return new Decimal(15) },
+		    effect() {
+				exp = 0.5
+				let eff = player[this.layer].points.add(1).pow(exp)
+        		return eff
+    		},
+            unlocked() { return hasUpgrade('g', 11) },
+		},
 	},
     buyables: {
 	},
