@@ -37,5 +37,5 @@ addLayer("g", {
     hotkeys: [
         {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return hasMilestone('b', 1)},
+    layerShown(){return true},
 })
