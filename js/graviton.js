@@ -34,7 +34,9 @@ addLayer("g", {
     buyables: {
 	},
 	prestigeButtonText() {
-    	return "Reset for +" + formatSmall(tmp[this.layer].resetGain) +
+    	let gain = tmp[this.layer].resetGain
+    	return "Reset for +" +
+           	(gain && gain.toString ? gain.toString() : "0") +
            	" graviton<br><br>Next at " +
            	format(tmp[this.layer].nextAt) +
            	" planck length"
