@@ -100,9 +100,11 @@ addLayer("s", {
     	11: {
     		title: "Buyable 1",
      		cost(x) {
-				let base = new Decimal(5)
+				let base = new Decimal(7)
 				let exp = new Decimal(x)
+				let Sexp = new Decimal(2)
 				let cost = new Decimal(1e10)
+				exp = exp.pow(Sexp)
 				let mult = base.pow(exp)
 				cost = cost.times(mult)
 				return cost},//x is the amount of buyables you have
