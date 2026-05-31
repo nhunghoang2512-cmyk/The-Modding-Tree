@@ -51,7 +51,7 @@ var displayThings = [
 	function() {
 		display = ""
 		if ((player.points.lt(1e18))) {
-			display = display + "Your universe size is " + player.points.div(new Decimal(1e9)) + " graviton."
+			display = display + "Your universe size is " + format(player.points.div(1e9), 2) + " graviton."
 		}
 		return display
 	},
