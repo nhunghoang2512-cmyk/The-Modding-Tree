@@ -53,7 +53,7 @@ var displayThings = [
 		if ((player.points.lt(1e18))) {
 			let graviton = player.points.div(1e9)
 			if (graviton.lt(0.01)) {
-    			display += "Your universe size is " + graviton.toString() + " graviton."
+    			display += "Your universe size is " + formatSmall(graviton) + " graviton."
 			} else {
     			display += "Your universe size is " + format(graviton, 2) + " graviton."
 			}
