@@ -34,13 +34,24 @@ addLayer("g", {
     buyables: {
 	},
 	prestigeButtonText() {
-    	let gain = tmp[this.layer].resetGain
-    	return "Reset for +" +
-           	(gain && gain.toString ? gain.toString() : "0") +
-           	" graviton<br><br>Next at " +
-           	format(tmp[this.layer].nextAt) +
-           	" planck length"
-	},
+    let gain = tmp[this.layer].resetGain
+    let req = tmp[this.layer].nextAt
+
+    let gainText = "0"
+
+    if (gain !== undefined && gain !== null) {
+        if (gain.toString && gain.toString().includes("e-")) {
+            gainText = gain.toString()
+        } else {
+            gainText = formatSmall(gain)
+        }
+    }
+
+    return "Reset for +" + gainText +
+           " graviton<br><br>Next at " +
+           format(req) +
+           " planck length"
+},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
