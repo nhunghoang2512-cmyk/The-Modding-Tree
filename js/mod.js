@@ -46,6 +46,8 @@ if (hasUpgrade("s", 12)) gain = gain.times(25)
 if (hasUpgrade("s", 13)) gain = gain.times(upgradeEffect("s", 13))
 if (hasUpgrade("s", 15)) gain = gain.times(upgradeEffect("s", 15))
 if (hasUpgrade("s", 22)) gain = gain.pow(1.1)
+gain = gain.mul(buyableEffect("s", 11))
+if (hasMilestone("b", 2)) gain = gain.times(2)
 return gain
 }
 
