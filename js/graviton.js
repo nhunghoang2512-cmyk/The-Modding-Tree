@@ -34,13 +34,10 @@ addLayer("g", {
     buyables: {
 	},
 	prestigeButtonText() {
-    	let gain = tmp[this.layer].resetGain
-    	let req = tmp[this.layer].nextAt
-    	let gainText = gain.lt(1)
-        	? gain.toString()
-        	: format(gain)
-    	return "Reset for +" + gainText + " graviton<br><br>" +
-           	"Next at " + format(req) + " planck length"
+    	return "Reset for +" + formatSmall(tmp[this.layer].resetGain) +
+           	" graviton<br><br>Next at " +
+           	format(tmp[this.layer].nextAt) +
+           	" planck length"
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
