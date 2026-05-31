@@ -99,7 +99,13 @@ addLayer("s", {
     buyables: {
       11: {
         title: "Buyable 1",
-        cost(x) {return new Decimal(1e10).times(5.pow(new Decimal(x))},//x is the amount of buyables you have
+        cost(x) {
+			let base = new Decimal(5)
+			let exp = new Decimal(x)
+			let cost = new Decimal(1e10)
+			let mult = base.pow(exp)
+			cost = cost.times(mult)
+			return cost},//x is the amount of buyables you have
         canAfford() { return player.a.points.gte(this.cost())},
         buy() {
            player.s.points = player.s.points.sub(this.cost())
