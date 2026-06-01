@@ -124,7 +124,7 @@ addLayer("n", {
     	11: {
     		title: "Buyable 1",
      		cost(x) {
-				let base = new Decimal(5)
+				let base = new Decimal(7)
 				let exp = new Decimal(x)
 				let Sexp = new Decimal(1)
 				let cost = new Decimal(5000)
