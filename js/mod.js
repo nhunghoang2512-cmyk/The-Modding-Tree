@@ -2,7 +2,7 @@ let modInfo = {
 	name: "The ??? Tree",
 	author: "nobody",
 	pointsName: "planck length",
-	modFiles: ["nothing.js", "tree.js"],
+	modFiles: ["nothing.js", "graviton.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
