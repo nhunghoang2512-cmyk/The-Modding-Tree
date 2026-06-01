@@ -127,6 +127,12 @@ addLayer("n", {
             cost() { return new Decimal(500000) },
             unlocked() { return hasUpgrade('n', 23) },
 		},
+        31: {
+			title: "9",
+            description: "x10k pl.",
+            cost() { return new Decimal(1e11) },
+            unlocked() { return hasUpgrade('n', 24) && hasUpgrade('g', 12) },
+		},
 	},
     buyables: {
     	11: {
