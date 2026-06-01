@@ -21,6 +21,7 @@ addLayer("n", {
     },
     gainMult() {
 		let mult = new Decimal(1)
+		if (hasUpgrade("n", 14)) mult = mult.times(upgradeEffect('n', 14))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -64,7 +65,7 @@ addLayer("n", {
             description: "pl boost nothing gain.",
             cost() { return new Decimal(75) },
 		    effect() {
-				exp = 0.25
+				exp = 0.15
 				let eff = player.points.add(1).pow(exp)
         		return eff
     		},
