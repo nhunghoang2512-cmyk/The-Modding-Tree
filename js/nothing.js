@@ -137,7 +137,7 @@ addLayer("n", {
            		player.n.points = player.n.points.sub(this.cost())
            		setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
         	},
-        	display() {return `Bought: ${format(getBuyableAmount(this.layer, this.id))}\nCost: ${format(this.cost())}\nEffect: ${format(this.effect())}x pl gain`},
+        	display() {return `Bought: ${format(getBuyableAmount(this.layer, this.id))}\nCost: ${format(this.cost())}\nEffect: ${format(this.effect())}x nothing gain`},
         	unlocked(){return hasUpgrade("n", 23)},
         	effect(x) {
         		let base = new Decimal(2)
