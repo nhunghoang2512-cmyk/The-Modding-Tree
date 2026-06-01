@@ -49,7 +49,7 @@ addLayer("g", {
 			title: "2",
             description: "new upgrades😜.",
             cost() { return new Decimal(3) },
-            unlocked() { return true },
+            unlocked() { return hasUpgrade('g', 11) },
 		},
 	},
     buyables: {
