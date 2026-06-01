@@ -140,7 +140,7 @@ addLayer("n", {
         	display() {return `Bought: ${format(getBuyableAmount(this.layer, this.id))}\nCost: ${format(this.cost())}\nEffect: ${format(this.effect())}x pl gain`},
         	unlocked(){return hasUpgrade("n", 23)},
         	effect(x) {
-        		let base = new Decimal(3)
+        		let base = new Decimal(2)
 				let eff = base.pow(x)
         		return eff} //x is the amount of buyables you have
     	},
