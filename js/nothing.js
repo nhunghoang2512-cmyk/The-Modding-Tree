@@ -120,6 +120,12 @@ addLayer("n", {
             cost() { return new Decimal(10000) },
             unlocked() { return hasUpgrade('n', 22) },
 		},
+        24: {
+			title: "8",
+            description: "x10 pl, nothing gain, unlock a new layer.",
+            cost() { return new Decimal(500000) },
+            unlocked() { return hasUpgrade('n', 23) },
+		},
 	},
     buyables: {
     	11: {
