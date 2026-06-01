@@ -6,7 +6,7 @@ addLayer("g", {
         unlocked: false,
 		points: new Decimal(0),
     }},
-    color: "white",
+    color: "grey",
     requires: new Decimal(1e9), // Can be a function that takes requirement increases into account
     resource: "graviton", // Name of prestige currency
     baseResource: "planck length", // Name of resource prestige is based on
@@ -39,9 +39,10 @@ addLayer("g", {
 	  },
     buyables: {
 	},
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+	branches:'n',
+    row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "n", description: "N: Reset for nothing", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return hasUpgrade('n', 24)},
 })
