@@ -21,10 +21,10 @@ addLayer("g", {
     baseResource: "planck length", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-	  exponent() {
+	exponent() {
 		  let exp = new Decimal(0.1)
 		  return exp
-	  },
+	},
     passiveGeneration() {
         return 0
     },
@@ -37,15 +37,21 @@ addLayer("g", {
         return exp
     },
     milestones: {
-	  },
+	},
     upgrades: {
         11: {
-			      title: "1",
+			title: "1",
             description: "x6 pl gain.",
             cost() { return new Decimal(1) },
             unlocked() { return true },
-		    },
-	  },
+		},
+        12: {
+			title: "2",
+            description: "new upgrades😜.",
+            cost() { return new Decimal(3) },
+            unlocked() { return true },
+		},
+	},
     buyables: {
 	},
 	branches:'n',
