@@ -45,6 +45,12 @@ addLayer("n", {
 				let eff = player[this.layer].points.add(1).pow(exp)
         		return eff
     		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "nothing ^"+ exp
+			},
             unlocked() { return hasUpgrade('n', 11) },
 		},
 	},
