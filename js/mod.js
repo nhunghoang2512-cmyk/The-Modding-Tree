@@ -39,9 +39,8 @@ function canGenPoints(){
 // Calculate points/sec!
 function getPointGen() {
 let gain = new Decimal(1)
-if (hasMilestone("g", 0)) gain = gain.times(1000)
-if (hasMilestone("g", 1)) gain = gain.times(1000)
-if (hasMilestone("g", 2)) gain = gain.times(1000)
+if (hasUpgrade("n", 11)) gain = gain.times(2)
+if (hasUpgrade("n", 12)) gain = gain.times(upgradeEffect('n', 12))
 return gain
 }
 
