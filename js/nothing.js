@@ -48,13 +48,16 @@ addLayer("n", {
 		    effect() {
 				exp = 0.5
 				let eff = player[this.layer].points.add(1).pow(exp)
+				eff = softcap(eff, new Decimal("1e5"), 0.25)
         		return eff
     		},
 			effectDisplay() {
-			return format(upgradeEffect(this.layer, this.id))+"x"
+			return format(upgradeEffect(this.layer, this.id))+"x"+
+			(upgradeEffect(this.layer, this.id).gte(1e5)?" (softcapped)":"")
 			},
 			tooltip() {
-			return "nothing^"+ exp
+			return "nothing^"+ exp+
+			(upgradeEffect(this.layer, this.id).gte(1e5)?" (softcapped)":"")
 			},
             unlocked() { return hasUpgrade('n', 11) },
 		},
