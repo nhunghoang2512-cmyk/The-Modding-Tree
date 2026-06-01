@@ -53,6 +53,12 @@ addLayer("n", {
 			},
             unlocked() { return hasUpgrade('n', 11) },
 		},
+        13: {
+			title: "3",
+            description: "x5 pl gain.",
+            cost() { return new Decimal(10) },
+            unlocked() { return hasUpgrade('n', 12) },
+		},
 	},
     buyables: {
 	},
