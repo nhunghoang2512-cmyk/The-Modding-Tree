@@ -94,6 +94,23 @@ addLayer("n", {
 			},
             unlocked() { return hasUpgrade('n', 14) },
 		},
+        22: {
+			title: "6",
+            description: "nothing boost itself.",
+            cost() { return new Decimal(150) },
+		    effect() {
+				exp = 0.35
+				let eff = player.[this.layer].points.add(1).pow(exp)
+        		return eff
+    		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "nothing ^ "+ exp
+			},
+            unlocked() { return hasUpgrade('n', 21) },
+		},
 	},
     buyables: {
 	},
