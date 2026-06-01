@@ -44,5 +44,5 @@ addLayer("g", {
     hotkeys: [
         {key: "g", description: "G: Reset for graviton", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return hasUpgrade('n', 24)},
+    layerShown(){return hasUpgrade('n', 24) || player.n.unlocked || player['n'].points.gte(1)},
 })
