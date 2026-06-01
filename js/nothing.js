@@ -24,7 +24,7 @@ addLayer("n", {
 		if (hasUpgrade("n", 14)) mult = mult.times(upgradeEffect('n', 14))
 		if (hasUpgrade("n", 22)) mult = mult.times(upgradeEffect('n', 22))
 		if (hasUpgrade("n", 23)) mult = mult.times(3)
-		if (hasUpgrade("n", 24)) mult = mult.times(10)
+		if (hasUpgrade("n", 24)) mult = mult.times(2)
 		mult = mult.times(buyableEffect('n', 11))
         return mult
     },
@@ -123,7 +123,7 @@ addLayer("n", {
 		},
         24: {
 			title: "8",
-            description: "x10 pl, nothing gain, unlock a new layer.",
+            description: "x2 pl, nothing gain, unlock a new layer.",
             cost() { return new Decimal(500000) },
             unlocked() { return hasUpgrade('n', 23) },
 		},
