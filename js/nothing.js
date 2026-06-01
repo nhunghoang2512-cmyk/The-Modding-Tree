@@ -50,7 +50,7 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "nothing ^"+ exp
+			return "nothing ^ "+ exp
 			},
             unlocked() { return hasUpgrade('n', 11) },
 		},
@@ -73,9 +73,26 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "nothing ^"+ exp
+			return "pl ^ "+ exp
 			},
-            unlocked() { return hasUpgrade('n', 11) },
+            unlocked() { return hasUpgrade('n', 13) },
+		},
+        21: {
+			title: "5",
+            description: "pl boost itself.",
+            cost() { return new Decimal(150) },
+		    effect() {
+				exp = 0.25
+				let eff = player.[this.layer]points.add(1).pow(exp)
+        		return eff
+    		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "nothing ^ "+ exp
+			},
+            unlocked() { return hasUpgrade('n', 14) },
 		},
 	},
     buyables: {
