@@ -42,6 +42,7 @@ let gain = new Decimal(1)
 if (hasUpgrade("n", 11)) gain = gain.times(2)
 if (hasUpgrade("n", 12)) gain = gain.times(upgradeEffect('n', 12))
 if (hasUpgrade("n", 13)) gain = gain.times(5)
+if (hasUpgrade("n", 21)) gain = gain.times(upgradeEffect('n', 21))
 return gain
 }
 
