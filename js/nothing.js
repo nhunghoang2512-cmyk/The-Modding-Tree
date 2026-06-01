@@ -59,6 +59,23 @@ addLayer("n", {
             cost() { return new Decimal(10) },
             unlocked() { return hasUpgrade('n', 12) },
 		},
+        14: {
+			title: "4",
+            description: "pl boost nothing gain.",
+            cost() { return new Decimal(75) },
+		    effect() {
+				exp = 0.25
+				let eff = player.points.add(1).pow(exp)
+        		return eff
+    		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "nothing ^"+ exp
+			},
+            unlocked() { return hasUpgrade('n', 11) },
+		},
 	},
     buyables: {
 	},
