@@ -15,7 +15,7 @@ addLayer("g", {
     	"buyables",
     	"upgrades",
     	"challenges",
-	]		
+	],		
     requires: new Decimal(1e9), // Can be a function that takes requirement increases into account
     resource: "graviton", // Name of prestige currency
     baseResource: "planck length", // Name of resource prestige is based on
