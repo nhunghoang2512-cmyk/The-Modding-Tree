@@ -52,12 +52,13 @@ function addedPlayerData() { return {
 var displayThings = [
 	function() {
 		display = ""
+		let graviton = player.points.div(1e9)
+		let size = player.points.div(1e35)
 		if ((player.points.lt(1e18))) {
-			let graviton = player.points.div(1e9)
-			if (graviton.lt(0.01)) {
-    			display += "Your universe size is " + formatSmall(graviton) + " graviton."
+			if (player.points.lt(1e18)) {
+    			display += "Your universe size is " + formatSmall(graviton) + " graviton ~ " + formatSmall(size) + "m."
 			} else {
-    			display += "Your universe size is " + format(graviton, 2) + " graviton."
+    			display += "Your universe size is " + format(graviton, 2) + " graviton ~ " + formatSmall(size) + "m."
 			}
 		}
 		return display
