@@ -23,6 +23,7 @@ addLayer("n", {
 		let mult = new Decimal(1)
 		if (hasUpgrade("n", 14)) mult = mult.times(upgradeEffect('n', 14))
 		if (hasUpgrade("n", 22)) mult = mult.times(upgradeEffect('n', 22))
+		if (hasUpgrade("n", 23)) mult = mult.times(3)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -112,8 +113,37 @@ addLayer("n", {
 			},
             unlocked() { return hasUpgrade('n', 21) },
 		},
+        23: {
+			title: "7",
+            description: "x3 pl, nothing gain, unlock a buyable.",
+            cost() { return new Decimal(10000) },
+            unlocked() { return hasUpgrade('n', 22) },
+		},
 	},
     buyables: {
+    	11: {
+    		title: "Buyable 1",
+     		cost(x) {
+				let base = new Decimal(5)
+				let exp = new Decimal(x)
+				let Sexp = new Decimal(1)
+				let cost = new Decimal(5000)
+				exp = exp.pow(Sexp)
+				let mult = base.pow(exp)
+				cost = cost.times(mult)
+				return cost},//x is the amount of buyables you have
+        	canAfford() { return player.n.points.gte(this.cost())},
+        	buy() {
+           		player.n.points = player.n.points.sub(this.cost())
+           		setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+        	},
+        	display() {return `Bought: ${format(getBuyableAmount(this.layer, this.id))}\nCost: ${format(this.cost())}\nEffect: ${format(this.effect())}x pl gain`},
+        	unlocked(){return hasUpgrade("n", 23)},
+        	effect(x) {
+        		let base = new Decimal(3)
+				let eff = base.pow(x)
+        		return eff} //x is the amount of buyables you have
+    	},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
