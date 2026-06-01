@@ -51,7 +51,7 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "nothing ^ "+ exp
+			return "nothing^"+ exp
 			},
             unlocked() { return hasUpgrade('n', 11) },
 		},
@@ -74,7 +74,7 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "pl ^ "+ exp
+			return "pl^"+ exp
 			},
             unlocked() { return hasUpgrade('n', 13) },
 		},
@@ -91,7 +91,7 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "pl ^ "+ exp
+			return "pl^"+ exp
 			},
             unlocked() { return hasUpgrade('n', 14) },
 		},
@@ -108,7 +108,7 @@ addLayer("n", {
 			return format(upgradeEffect(this.layer, this.id))+"x"
 			},
 			tooltip() {
-			return "nothing ^ "+ exp
+			return "nothing^"+ exp
 			},
             unlocked() { return hasUpgrade('n', 21) },
 		},
