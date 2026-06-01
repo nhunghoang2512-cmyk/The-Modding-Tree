@@ -45,6 +45,7 @@ if (hasUpgrade("n", 13)) gain = gain.times(5)
 if (hasUpgrade("n", 21)) gain = gain.times(upgradeEffect('n', 21))
 if (hasUpgrade("n", 23)) gain = gain.times(3)
 if (hasUpgrade("n", 24)) gain = gain.times(2)
+if (hasUpgrade("g", 11)) gain = gain.times(6)
 return gain
 }
 
