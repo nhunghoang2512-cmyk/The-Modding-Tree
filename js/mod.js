@@ -60,7 +60,7 @@ var displayThings = [
 		display = ""
 		let graviton = player.points.div(1e9)
 		let size = player.points.div(1e35)
-		if ((player.points.lt(1e18))) {
+		if ((player.points.lt(1e128))) {
 			if (player.points.lt(1e18)) {
     			display += "Your universe size is " + formatSmall(graviton) + " graviton ~ " + formatSmall(size) + "m."
 			} else {
