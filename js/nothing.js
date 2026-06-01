@@ -101,7 +101,7 @@ addLayer("n", {
             cost() { return new Decimal(150) },
 		    effect() {
 				exp = 0.35
-				let eff = player.[this.layer].points.add(1).pow(exp)
+				let eff = player[this.layer].points.add(1).pow(exp)
         		return eff
     		},
 			effectDisplay() {
