@@ -70,6 +70,12 @@ addLayer("g", {
             cost() { return new Decimal(500) },
             unlocked() { return hasUpgrade('g', 13) },
 		},
+        15: {
+			title: "5",
+            description: "new upgrade before next layer.",
+            cost() { return new Decimal(5000) },
+            unlocked() { return hasUpgrade('g', 14) },
+		},
 	},
     buyables: {
 	},
