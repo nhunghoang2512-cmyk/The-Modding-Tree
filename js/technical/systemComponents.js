@@ -112,9 +112,9 @@ var systemComponents = {
 			<br>Offline Time: {{formatTime(player.offTime.remain)}}<br>
 		</span>
 		<br>
-		<span v-if="player.points.lt('1e1000')"  class="overlayThing">You blackhole have </span>
+		<span class="overlayThing">You blackhole have </span>
 		<h2  class="overlayThing" id="points">{{format(player.points)}}</h2>
-		<span v-if="player.points.lt('1e16')" class="overlayThing">
+		<span class="overlayThing">
     		{{modInfo.pointsName}}
     			<span v-if="player.points.gte('1e20')">
         			(softcap due to hawking radiation)
