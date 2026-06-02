@@ -144,6 +144,12 @@ addLayer("n", {
             cost() { return new Decimal(1e11) },
             unlocked() { return hasUpgrade('n', 24) && hasUpgrade('g', 12) },
 		},
+        32: {
+			title: "10",
+            description: "x100 nothing.",
+            cost() { return new Decimal(1e17) },
+            unlocked() { return hasUpgrade('n', 31) },
+		},
 	},
     buyables: {
     	11: {
