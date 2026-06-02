@@ -63,6 +63,12 @@ addLayer("g", {
             cost() { return new Decimal(50) },
             unlocked() { return hasUpgrade('g', 12) },
 		},
+        14: {
+			title: "4",
+            description: "x5 all gain.",
+            cost() { return new Decimal(500) },
+            unlocked() { return hasUpgrade('g', 13) },
+		},
 	},
     buyables: {
 	},
