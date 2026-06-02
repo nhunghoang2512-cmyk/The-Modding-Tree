@@ -14,7 +14,7 @@ addLayer("n", {
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
 		let exp = new Decimal(0.25)
-		if (hasUpgrade("g", 13)) mult = mult.add(0.1)
+		if (hasUpgrade("g", 13)) exp = exp.add(0.1)
 		return exp
 	},
     passiveGeneration() {
