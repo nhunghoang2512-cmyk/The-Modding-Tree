@@ -48,6 +48,7 @@ if (hasUpgrade("n", 24)) gain = gain.times(2)
 if (hasUpgrade("g", 11)) gain = gain.times(6)
 if (hasUpgrade("n", 31)) gain = gain.times(10000)
 if (hasUpgrade("g", 14)) gain = gain.times(5)
+if (hasUpgrade("n", 34)) gain = gain.pow(1.1)
 return gain
 }
 
