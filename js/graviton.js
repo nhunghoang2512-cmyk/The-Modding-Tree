@@ -40,7 +40,7 @@ addLayer("g", {
         0: {
             requirementDescription: "50 graviton",
             effectDescription: "auto buy buyable 1.",
-            done() { return player.e.points.gte(50) }
+            done() { return player.g.points.gte(50) }
         },
 	},
     upgrades: {
