@@ -32,6 +32,13 @@ addLayer("n", {
 		let exp = new Decimal(1)
         return exp
     },
+    automate() {
+		if (hasMilestone('g', 0)) {
+			if (layers.n.buyables[11].canAfford()) {
+				layers.n.buyables[11].buy();
+			};
+		};
+	},
     milestones: {
 	},
     upgrades: {
