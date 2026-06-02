@@ -151,6 +151,12 @@ addLayer("n", {
             cost() { return new Decimal(1e17) },
             unlocked() { return hasUpgrade('n', 31) },
 		},
+        33: {
+			title: "11",
+            description: "+0.1 graviton gain exponent.",
+            cost() { return new Decimal(1e28) },
+            unlocked() { return hasUpgrade('n', 32) },
+		},
 	},
     buyables: {
     	11: {
