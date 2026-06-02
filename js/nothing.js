@@ -27,6 +27,7 @@ addLayer("n", {
 		if (hasUpgrade("n", 23)) mult = mult.times(3)
 		if (hasUpgrade("n", 24)) mult = mult.times(2)
 		if (hasUpgrade("n", 32)) mult = mult.times(100)
+		if (hasUpgrade("g", 14)) mult = mult.times(5)
 		mult = mult.times(buyableEffect('n', 11))
         return mult
     },
