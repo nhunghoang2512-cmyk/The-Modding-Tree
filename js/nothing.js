@@ -158,6 +158,12 @@ addLayer("n", {
             cost() { return new Decimal(1e28) },
             unlocked() { return hasUpgrade('n', 32) },
 		},
+        34: {
+			title: "12",
+            description: "^1.1 pl gain.",
+            cost() { return new Decimal(1e28) },
+            unlocked() { return hasUpgrade('n', 33) && hasUpgrade('g', 15) },
+		},
 	},
     buyables: {
     	11: {
