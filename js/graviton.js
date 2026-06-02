@@ -37,6 +37,11 @@ addLayer("g", {
         return exp
     },
     milestones: {
+        0: {
+            requirementDescription: "50 graviton",
+            effectDescription: "auto buy buyable 1.",
+            done() { return player.e.points.gte(50) }
+        },
 	},
     upgrades: {
         11: {
@@ -47,7 +52,7 @@ addLayer("g", {
 		},
         12: {
 			title: "2",
-            description: "new upgrades😜.",
+            description: "new upgrades.",
             cost() { return new Decimal(3) },
             unlocked() { return hasUpgrade('g', 11) },
 		},
