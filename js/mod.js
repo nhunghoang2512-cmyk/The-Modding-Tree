@@ -62,9 +62,9 @@ var displayThings = [
 		let size = player.points.div(1e35)
 		if ((player.points.lt(1e128))) {
 			if (player.points.lt(1e9)) {
-    			display += "Your universe size is " + formatSmall(graviton) + " graviton ~ " + formatSmall(size) + "m."
+    			display += "Your blackhole size is " + formatSmall(graviton) + " graviton ~ " + formatSmall(size) + "m."
 			} else {
-    			display += "Your universe size is " + format(graviton, 2) + " graviton ~ " + formatSmall(size) + "m."
+    			display += "Your blackhole size is " + format(graviton, 2) + " graviton ~ " + formatSmall(size) + "m."
 			}
 		}
 		return display
