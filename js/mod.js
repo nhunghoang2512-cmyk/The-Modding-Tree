@@ -2,7 +2,7 @@ let modInfo = {
 	name: "The ??? Tree",
 	author: "nobody",
 	pointsName: "planck length",
-	modFiles: ["nothing.js", "graviton.js", "tree.js"],
+	modFiles: ["nothing.js", "graviton.js", "atom.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
@@ -49,6 +49,7 @@ if (hasUpgrade("g", 11)) gain = gain.times(6)
 if (hasUpgrade("n", 31)) gain = gain.times(10000)
 if (hasUpgrade("g", 14)) gain = gain.times(5)
 if (hasUpgrade("n", 34)) gain = gain.pow(1.1)
+gain = softcap(gain, new Decimal("1e20"), 0.25)
 return gain
 }
 
