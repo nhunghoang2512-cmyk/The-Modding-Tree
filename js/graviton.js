@@ -22,18 +22,19 @@ addLayer("g", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		  let exp = new Decimal(0.1)
-		  return exp
+		let exp = new Decimal(0.1)
+		if (hasUpgrade("n", 33)) exp = exp.add(0.1)
+		return exp
 	},
     passiveGeneration() {
         return 0
     },
     gainMult() {
-		  let mult = new Decimal(1)
+		let mult = new Decimal(1)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-		  let exp = new Decimal(1)
+		let exp = new Decimal(1)
         return exp
     },
     milestones: {
