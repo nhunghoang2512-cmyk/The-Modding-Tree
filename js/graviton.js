@@ -56,6 +56,12 @@ addLayer("g", {
             cost() { return new Decimal(3) },
             unlocked() { return hasUpgrade('g', 11) },
 		},
+        13: {
+			title: "3",
+            description: "+0.1 nothing gain exponent.",
+            cost() { return new Decimal(50) },
+            unlocked() { return hasUpgrade('g', 12) },
+		},
 	},
     buyables: {
 	},
