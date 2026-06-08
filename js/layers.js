@@ -141,5 +141,5 @@ addLayer("ea", {
     hotkeys: [
         {key: "e", description: "E: Reset for effortless", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return player.e.point.gte(500) || player.ea.point.gte(1)},
+    layerShown(){return player.e.total.gte(500) || player.ea.total.gte(1)},
 })
