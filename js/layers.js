@@ -134,6 +134,12 @@ addLayer("ea", {
     milestones: {
 	},
     upgrades: {
+        11: {
+			title: "1",
+            description: "x5 skill gain.",
+            cost() { return new Decimal(1) },
+            unlocked() { return true },
+		},
 	},
     buyables: {
 	},
