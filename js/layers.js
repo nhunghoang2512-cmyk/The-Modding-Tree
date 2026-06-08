@@ -87,7 +87,7 @@ addLayer("e", {
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
             effect(x) {
-                base1 = new Decimal(1e10)
+                base1 = new Decimal(2)
                 base2 = x
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
