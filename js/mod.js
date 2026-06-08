@@ -38,6 +38,7 @@ function canGenPoints(){
 
 // Calculate points/sec!
 function getPointGen() {
+let gain = new Decimal(1)
 if (hasUpgrade("e", 11)) gain = gain.times(5)
 if (hasUpgrade("e", 12)) gain = gain.times(upgradeEffect("e", 12))
 if (hasUpgrade("e", 14)) gain = gain.times(2)
