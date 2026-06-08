@@ -12,7 +12,7 @@ body {
 h1, h2, h3, b, input {
 	display: inline;
 	font-family: "Verdana",
-    font-weight: "normal"
+    font-weight: "500"
 }
 
 /* These are styles for different states of components. You can make layer-specific versions with .c.locked, for example */
