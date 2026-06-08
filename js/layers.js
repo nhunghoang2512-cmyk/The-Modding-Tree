@@ -68,6 +68,32 @@ addLayer("e", {
 		},
 	},
     buyables: {
+        11: {
+            title: "Effortless Buyable 1",
+            unlocked() { return hasUpgrade("e", 13) },
+            cost(x) {
+                exp = 5
+                return new Decimal(50).mul(Decimal.pow(exp, x))
+            },
+            display() {
+                return "Cost: " + notationChooser(tmp[this.layer].buyables[this.id].cost) + " mega" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost Point Fragments gain by x" + notationChooser(buyableEffect(this.layer, this.id))
+            },
+            canAfford() {
+                return player[this.layer].points.gte(this.cost())
+            },
+            buy() {
+                let cost = new Decimal (1)
+                player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            effect(x) {
+                base1 = new Decimal(1e10)
+                base2 = x
+                expo = new Decimal(1.005)
+                eff = base1.pow(Decimal.pow(base2, expo))
+                return eff
+            },
+		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
