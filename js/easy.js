@@ -36,6 +36,12 @@ addLayer("ea", {
             cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
+        12: {
+			title: "2",
+            description: "2e use a better formula.",
+            cost() { return new Decimal(2) },
+            unlocked() { return hasUpgrade('ea', 11) },
+		},
 	},
     buyables: {
 	},
