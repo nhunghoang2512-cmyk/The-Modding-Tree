@@ -43,6 +43,7 @@ addLayer("e", {
             cost() { return new Decimal(5) },
 		    effect() {
 			exp = 0.5
+			if (hasUpgrade('ea', 12)) exp = 0.6
 			let eff = player[this.layer].points.add(1).pow(exp)
         	return eff
     		},
