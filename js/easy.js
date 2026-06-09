@@ -21,6 +21,7 @@ addLayer("ea", {
     },
     gainMult() {
 		let mult = new Decimal(1)
+		if (hasUpgrade('ea', 12)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -41,6 +42,12 @@ addLayer("ea", {
             description: "2e use a better formula.",
             cost() { return new Decimal(2) },
             unlocked() { return hasUpgrade('ea', 11) },
+		},
+        13: {
+			title: "3",
+            description: "x10 skill, x3 EF, x2 EA gain.",
+            cost() { return new Decimal(2) },
+            unlocked() { return hasUpgrade('ea', 12) },
 		},
 	},
     buyables: {
