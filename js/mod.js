@@ -44,6 +44,7 @@ if (hasUpgrade("e", 12)) gain = gain.times(upgradeEffect("e", 12))
 gain = gain.times(buyableEffect('e', 11))
 if (hasUpgrade("e", 14)) gain = gain.times(2)
 if (hasUpgrade("ea", 11)) gain = gain.times(5)
+if (hasUpgrade("ea", 13)) gain = gain.times(10)
 	return gain
 }
 
