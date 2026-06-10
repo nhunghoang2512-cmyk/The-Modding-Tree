@@ -21,11 +21,7 @@ addLayer("e", {
         return 0
     },
     automate() {
-		if (hasMilestone('m', 0)) {
-			if (layers.e.buyables[11].canAfford()) {
-				layers.e.buyables[11].buy();
-			};
-		};
+		if (hasMilestone("m", 0)) setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(5).floor().add(1) : getBuyableAmount("e", 11))
 	},
     gainMult() {
 		let mult = new Decimal(1)
