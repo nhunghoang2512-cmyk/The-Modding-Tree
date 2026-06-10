@@ -20,13 +20,13 @@ addLayer("e", {
 		if (hasMilestone('ea', 0)) return 1
         return 0
     },
-     automate() {
+    automate() {
 		if (hasMilestone('m', 0)) {
 			if (layers.e.buyables[11].canAfford()) {
 				layers.e.buyables[11].buy();
 			};
 		};
-	}
+	},
     gainMult() {
 		let mult = new Decimal(1)
 		if (hasUpgrade("e", 14)) mult = mult.times(2)
