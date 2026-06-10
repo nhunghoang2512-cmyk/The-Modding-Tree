@@ -44,7 +44,7 @@ addLayer("m", {
         },
         1: {
             requirementDescription: "10 medium point",
-            effectDescription: "buyable no longer cost, x100 skill, x10 EF, x3 EA, x2 M gain.",
+            effectDescription: "EF buyable no longer cost, x100 skill, x10 EF, x3 EA, x2 M gain.",
             done() { return player.m.points.gte(10) }
         },
 	},
