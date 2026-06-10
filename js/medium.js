@@ -36,6 +36,11 @@ addLayer("m", {
     	return `boosting skill by ${format(layers.m.eff())}`
 	},
     milestones: {
+        0: {
+            requirementDescription: "1 medium point",
+            effectDescription: "unlock a new buyable and autobuy the first one.",
+            done() { return player.m.points.gte(1) }
+        },
 	},
     upgrades: {
 	},
