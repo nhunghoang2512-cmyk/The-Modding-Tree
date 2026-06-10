@@ -32,7 +32,7 @@ addLayer("ea", {
         0: {
             requirementDescription: "50 easy point",
             effectDescription: "gain 100% EF per second.",
-            done() { return player.m.points.gte(1) }
+            done() { return player.ea.points.gte(50) }
         },
 	},
     upgrades: {
