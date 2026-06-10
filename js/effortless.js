@@ -31,6 +31,7 @@ addLayer("e", {
 		let mult = new Decimal(1)
 		if (hasUpgrade("e", 14)) mult = mult.times(2)
 		if (hasUpgrade("ea", 13)) mult = mult.times(3)
+		if (hasMilestone("m", 1)) mult = mult.times(10)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -92,7 +93,8 @@ addLayer("e", {
                 return player[this.layer].points.gte(this.cost())
             },
             buy() {
-                let cost = new Decimal (1)
+                let cost = new Decimal(1)
+				if (hasMilestone('m', 1)) cost = new Decimal(0)
                 player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
@@ -123,6 +125,7 @@ addLayer("e", {
             },
             buy() {
                 let cost = new Decimal(1)
+				if (hasMilestone('m', 1)) cost = new Decimal(0)
                 player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
