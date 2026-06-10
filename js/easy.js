@@ -63,7 +63,7 @@ addLayer("ea", {
         14: {
 			title: "4",
             description: "Easy point boost skill gain.",
-            cost() { return new Decimal(500) },
+            cost() { return new Decimal(10) },
 		    effect() {
 			exp = 0.5
 			let eff = player[this.layer].points.add(1).pow(exp)
