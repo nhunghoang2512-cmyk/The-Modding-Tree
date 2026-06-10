@@ -110,7 +110,7 @@ addLayer("e", {
 		},
         12: {
             title: "Effortless Buyable 2",
-            unlocked() { return hasMilestone("e", 13) },
+            unlocked() { return hasMilestone("m", 0) },
             cost(x) {
                 exp = 5
                 return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(x, 2)))
