@@ -33,7 +33,7 @@ addLayer("m", {
         return eff
     },
     effectDescription() {
-    	return `Base Points Gain ${format(layers.m.eff())}`
+    	return `boosting skill by ${format(layers.m.eff())}`
 	},
     milestones: {
 	},
