@@ -109,7 +109,7 @@ addLayer("e", {
                 return eff
             },
             tooltip() {
-                return "Cost Formula: 50 x 5^Amt. Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
+                return "Cost Formula: 50 x 5^(Amt^1.05). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
             }
 		},
         12: {
