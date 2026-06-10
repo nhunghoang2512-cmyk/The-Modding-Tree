@@ -21,6 +21,7 @@ addLayer("m", {
     },
     gainMult() {
 		let mult = new Decimal(1)
+		if (hasMilestone('m', 1)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -40,6 +41,11 @@ addLayer("m", {
             requirementDescription: "1 medium point",
             effectDescription: "unlock a new buyable and autobuy the first one.",
             done() { return player.m.points.gte(1) }
+        },
+        1: {
+            requirementDescription: "10 medium point",
+            effectDescription: "buyable no longer cost, x100 skill, x10 EF, x3 EA, x2 M gain.",
+            done() { return player.m.points.gte(10) }
         },
 	},
     upgrades: {
