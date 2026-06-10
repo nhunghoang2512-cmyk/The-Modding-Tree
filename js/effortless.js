@@ -118,7 +118,7 @@ addLayer("e", {
                 return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(x, 2)))
             },
             display() {
-                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " effortless point" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost EB1's base by x" + format(buyableEffect(this.layer, this.id))
+                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " effortless point" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost EFB1's base by x" + format(buyableEffect(this.layer, this.id))
             },
             canAfford() {
                 return player[this.layer].points.gte(this.cost())
