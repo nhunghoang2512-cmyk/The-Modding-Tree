@@ -34,6 +34,11 @@ addLayer("ea", {
             effectDescription: "gain 100% EF per second.",
             done() { return player.ea.points.gte(50) }
         },
+        1: {
+            requirementDescription: "10000 easy point",
+            effectDescription: "unlock a new layer.",
+            done() { return player.ea.points.gte(10000) }
+        },
 	},
     upgrades: {
         11: {
@@ -79,5 +84,5 @@ addLayer("ea", {
     hotkeys: [
         {key: "a", description: "A: Reset for easy", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return player.e.total.gte(500) || player.ea.total.gte(1)},
+    layerShown(){return player.e.total.gte(500) || player.ea.total.gte(1) || player.m.total.gte(1) || player.ea.unlocked},
 })
