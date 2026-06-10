@@ -36,9 +36,9 @@ addLayer("ea", {
             done() { return player.ea.points.gte(50) }
         },
         1: {
-            requirementDescription: "10000 easy point",
+            requirementDescription: "100 easy point",
             effectDescription: "unlock a new layer.",
-            done() { return player.ea.points.gte(10000) }
+            done() { return player.ea.points.gte(100) }
         },
 	},
     upgrades: {
