@@ -54,6 +54,23 @@ addLayer("ea", {
             cost() { return new Decimal(2) },
             unlocked() { return hasUpgrade('ea', 12) },
 		},
+        14: {
+			title: "4",
+            description: "Easy point boost skill gain.",
+            cost() { return new Decimal(500) },
+		    effect() {
+			exp = 0.5
+			let eff = player[this.layer].points.add(1).pow(exp)
+        	return eff
+    		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "addition points^"+exp
+			},
+            unlocked() { return hasUpgrade("ea", 13) },
+		},
 	},
     buyables: {
 	},
