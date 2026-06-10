@@ -20,6 +20,13 @@ addLayer("e", {
 		if (hasMilestone('ea', 0)) return 1
         return 0
     },
+     automate() {
+		if (hasMilestone('m', 0)) {
+			if (layers.e.buyables[11].canAfford()) {
+				layers.e.buyables[11].buy();
+			};
+		};
+	}
     gainMult() {
 		let mult = new Decimal(1)
 		if (hasUpgrade("e", 14)) mult = mult.times(2)
@@ -79,7 +86,7 @@ addLayer("e", {
                 return new Decimal(50).mul(Decimal.pow(exp, x))
             },
             display() {
-                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " mega" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost Point Fragments gain by x" + format(buyableEffect(this.layer, this.id))
+                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " effortless point" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost skill gain by x" + format(buyableEffect(this.layer, this.id))
             },
             canAfford() {
                 return player[this.layer].points.gte(this.cost())
@@ -91,11 +98,44 @@ addLayer("e", {
             },
             effect(x) {
                 base1 = new Decimal(2)
+				base1 = base1.times(buyableEffect('e', 12))
                 base2 = x
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
                 return eff
             },
+            tooltip() {
+                return "Cost Formula: 50 x 5^Amt. Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
+            }
+		},
+        12: {
+            title: "Effortless Buyable 2",
+            unlocked() { return hasMilestone("e", 13) },
+            cost(x) {
+                exp = 5
+                return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(x, 2)))
+            },
+            display() {
+                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) + " effortless point" + "<br>Bought: " + getBuyableAmount(this.layer, this.id) + "<br>Effect: Boost EB1's base by x" + format(buyableEffect(this.layer, this.id))
+            },
+            canAfford() {
+                return player[this.layer].points.gte(this.cost())
+            },
+            buy() {
+                let cost = new Decimal(1)
+                player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            effect(x) {
+                base1 = new Decimal(1.2)
+                base2 = x
+                expo = new Decimal(1.005)
+                eff = base1.pow(Decimal.pow(base2, expo))
+                return eff
+            },
+            tooltip() {
+                return "Cost Formula: 1e10 x 5^(Amt^2). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
+            }
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
