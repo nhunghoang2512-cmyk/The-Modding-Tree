@@ -81,6 +81,7 @@ addLayer("e", {
             unlocked() { return hasUpgrade("e", 13) },
             cost(x) {
                 exp = 5
+				if (hasChallenge('m', 11)) exp = 4
                 return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(x, 1.05)))
             },
             display() {
@@ -118,6 +119,7 @@ addLayer("e", {
             unlocked() { return hasMilestone("m", 0) },
             cost(x) {
                 exp = 5
+				if (hasChallenge('m', 11)) exp = 4
                 return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(x, 3)))
             },
             display() {
