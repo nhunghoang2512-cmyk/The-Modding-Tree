@@ -20,8 +20,10 @@ addLayer("e", {
 		if (hasMilestone('ea', 0)) return 1
         return 0
     },
-    automate() {
-		if (hasMilestone("m", 0)) setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(5).floor().add(1) : getBuyableAmount("e", 11))
+	automate() {
+    	let exp = hasChallenge("m", 11) ? 4 : 5
+    	let amtdiv = hasChallenge("m", 11) ? 1.5 : 1
+    	if (hasMilestone("m", 0)) setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(exp).pow(1/1.05).mul(amtdiv).floor().add(1) : getBuyableAmount("e", 11))
 	},
     gainMult() {
 		let mult = new Decimal(1)
