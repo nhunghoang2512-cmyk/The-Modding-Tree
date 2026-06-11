@@ -85,6 +85,7 @@ addLayer("ea", {
             unlocked() { return hasMilestone("m", 2) },
             cost(x) {
                 exp = 5
+				if (hasChallenge('m', 11)) exp = 4
                 return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(x, 1.1)))
             },
             display() {
