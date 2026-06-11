@@ -22,9 +22,9 @@ addLayer("e", {
     },
 	automate() {
     	if (hasMilestone("m", 0))
-        	setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/1.05).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor() : getBuyableAmount("e", 11))
+        	setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/1.05).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor().add(1) : getBuyableAmount("e", 11))
     	if (hasChallenge("m", 12))
-        	setBuyableAmount("e", 12, player.e.points.gte(1e10) ? player.e.points.div(1e10).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/3).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor() : getBuyableAmount("e", 12))
+        	setBuyableAmount("e", 12, player.e.points.gte(1e10) ? player.e.points.div(1e10).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/3).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor().add(1) : getBuyableAmount("e", 12))
 	},
     gainMult() {
 		let mult = new Decimal(1)
