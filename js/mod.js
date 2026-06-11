@@ -49,6 +49,9 @@ if (hasUpgrade("ea", 14)) gain = gain.times(upgradeEffect("ea", 14))
 gain = gain.times(layers.m.eff())
 if (hasMilestone("m", 1)) gain = gain.times(100)
 gain = gain.times(buyableEffect('ea', 11))
+
+//challenge
+if (inChallenge('m', 11)) gain = gain.pow(0.3)
 	return gain
 }
 
