@@ -17,6 +17,7 @@ addLayer("ea", {
 		return exp
 	},
     passiveGeneration() {
+		if hasMilestone('m', 2) return 1
         return 0
     },
     gainMult() {
@@ -79,6 +80,39 @@ addLayer("ea", {
 		},
 	},
     buyables: {
+        11: {
+            title: "Effortless Buyable 1",
+            unlocked() { return hasMilestone("m", 2) },
+            cost(x) {
+                exp = 5
+                return new Decimal(50000).mul(Decimal.pow(exp, Decimal.pow(x, 1.1)))
+            },
+            display() {
+                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
+           		" effortless point<br>Bought: " +
+           		format(getBuyableAmount(this.layer, this.id)) +
+           		"<br>Effect: Boost effortless gain by x" +
+           		format(buyableEffect(this.layer, this.id))
+            },
+            canAfford() {
+                return player[this.layer].points.gte(this.cost())
+            },
+            buy() {
+                let cost = new Decimal(1)
+                player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            effect(x) {
+                base1 = new Decimal(2)
+                base2 = x
+                expo = new Decimal(1.005)
+                eff = base1.pow(Decimal.pow(base2, expo))
+                return eff
+            },
+            tooltip() {
+                return "Cost Formula: 50000 x 5^(Amt^1.1). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
+            }
+		},
 	},
 	branches:['e'],
     row: 1, // Row the layer is in on the tree (0 is the first row)
