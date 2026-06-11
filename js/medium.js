@@ -66,9 +66,9 @@ addLayer("m", {
     	11: {
         	name: "Medium Challenge 1",
         	challengeDescription: "^0.3 skill gain.",
-        	goalDescription: "Reach points.",
+        	goalDescription: "Reach 1e7 points.",
         	rewardDescription: "all buyable cost got nerfed.",
-        	canComplete: function() {return player.points.gte("1e215")},
+        	canComplete: function() {return player.points.gte("1e7")},
         	unlocked(){return hasMilestone("m",3)}
 		},
     },
