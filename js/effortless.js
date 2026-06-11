@@ -96,14 +96,18 @@ addLayer("e", {
 				amt = x.div(amtdiv)
                 return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(amt, 1.05)))
             },
-            display() {
-                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
-           		" effortless point<br>Bought: " +
-           		format(getBuyableAmount(this.layer, this.id)) +
-           		"<br>Effect: Boost skill gain by x" +
-           		format(buyableEffect(this.layer, this.id)) +
-           		(buyableEffect(this.layer, this.id).gte(1e25) ? " (softcapped)" : "")
-            },
+			display() {
+    			return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
+           			" effortless point<br>Bought: " +
+           			format(getBuyableAmount(this.layer, this.id)) +
+           			"<br>Effect: Boost skill gain by x" +
+           			format(buyableEffect(this.layer, this.id)) +
+           			(buyableEffect(this.layer, this.id).gte("1e100")
+               			? " (supercapped)"
+               			: buyableEffect(this.layer, this.id).gte("1e25")
+	               		? " (softcapped)"
+               			: "")
+			},
             canAfford() {
                 return player[this.layer].points.gte(this.cost())
             },
@@ -120,6 +124,7 @@ addLayer("e", {
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
 				eff = softcap(eff, new Decimal("1e25"), 0.5)
+				eff = softcap(eff, new Decimal("1e100"), 0.25)
                 return eff
             },
 		},
