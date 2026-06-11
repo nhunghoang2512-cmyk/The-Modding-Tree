@@ -122,7 +122,7 @@ addLayer("ea", {
                 exp = 5
 				amtdiv = 1
 				amt = x.div(amtdiv)
-                return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(amt, 4)))
+                return new Decimal(1e6).mul(Decimal.pow(exp, Decimal.pow(amt, 4)))
             },
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
