@@ -47,6 +47,11 @@ addLayer("m", {
             effectDescription: "EF buyable no longer cost, x100 skill, x10 EF, x3 EA, x2 M gain.",
             done() { return player.m.points.gte(10) }
         },
+        2: {
+            requirementDescription: "15 medium point",
+            effectDescription: "gain 100% EA per second, unlock a buyable.",
+            done() { return player.m.points.gte(15) }
+        },
 	},
     upgrades: {
 	},
