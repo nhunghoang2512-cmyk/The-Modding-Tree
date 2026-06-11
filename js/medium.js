@@ -57,6 +57,11 @@ addLayer("m", {
             effectDescription: "unlock a challenge.",
             done() { return player.m.points.gte(25) }
         },
+        4: {
+            requirementDescription: "100 medium point",
+            effectDescription: "unlock another challenge.",
+            done() { return player.m.points.gte(100) }
+        },
 	},
     upgrades: {
 	},
@@ -70,6 +75,14 @@ addLayer("m", {
         	rewardDescription: "all buyable cost got nerfed.",
         	canComplete: function() {return player.points.gte("1e7")},
         	unlocked(){return hasMilestone("m",3)}
+		},
+    	12: {
+        	name: "Medium Challenge 2",
+        	challengeDescription: "buyable cost scales significantly faster.",
+        	goalDescription: "Reach  points.",
+        	rewardDescription: "unlock a new buyable.",
+        	canComplete: function() {return player.points.gte("1e133")},
+        	unlocked(){return hasMilestone("m",4)}
 		},
     },
 	branches:['e'],
