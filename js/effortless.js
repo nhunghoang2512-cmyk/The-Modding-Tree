@@ -21,8 +21,8 @@ addLayer("e", {
         return 0
     },
 	automate() {
-    	let exp = hasChallenge("m", 11) ? 4 : 5
-    	let amtdiv = hasChallenge("m", 11) ? 1.5 : 1
+    	let exp = inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5
+    	let amtdiv = inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1
     	if (hasMilestone("m", 0)) setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(exp).pow(1/1.05).mul(amtdiv).floor().add(1) : getBuyableAmount("e", 11))
 	},
     gainMult() {
@@ -117,9 +117,6 @@ addLayer("e", {
 				eff = softcap(eff, new Decimal("1e25"), 0.5)
                 return eff
             },
-            tooltip() {
-                return "Cost Formula: 50 x 5^(Amt^1.05). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
-            }
 		},
         12: {
             title: "Effortless Buyable 2",
@@ -159,9 +156,6 @@ addLayer("e", {
 				eff = softcap(eff, new Decimal("5"), 0.5)
                 return eff
             },
-            tooltip() {
-                return "Cost Formula: 1e10 x 5^(Amt^3). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
-            }
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
