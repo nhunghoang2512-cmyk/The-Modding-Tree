@@ -113,9 +113,6 @@ addLayer("ea", {
                 eff = base1.pow(Decimal.pow(base2, expo))
                 return eff
             },
-            tooltip() {
-                return "Cost Formula: 25000 x" + exp"^(Amt/" + amtdiv"^1.1). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
-            }
 		},
 	},
 	branches:['e'],
