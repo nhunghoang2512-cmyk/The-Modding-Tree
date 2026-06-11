@@ -80,7 +80,7 @@ addLayer("m", {
         	name: "Medium Challenge 2",
         	challengeDescription: "buyable cost scales significantly faster.",
         	goalDescription: "Reach 1e28 points.",
-        	rewardDescription: "unlock a new buyable.",
+        	rewardDescription: "unlock a new buyable, autobuy EFB2.",
         	canComplete: function() {return player.e.points.gte("1e28")},
         	unlocked(){return hasMilestone("m",4)}
 		},
