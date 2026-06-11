@@ -82,7 +82,10 @@ addLayer("e", {
             cost(x) {
                 exp = 5
 				if (hasChallenge('m', 11)) exp = 4
-                return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(x, 1.05)))
+				amtdiv = 1
+				if (hasChallenge('m', 11)) amtdiv = 1.5
+				amt = x.div(amtdiv)
+                return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(amt, 1.05)))
             },
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
@@ -120,7 +123,10 @@ addLayer("e", {
             cost(x) {
                 exp = 5
 				if (hasChallenge('m', 11)) exp = 4
-                return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(x, 3)))
+				amtdiv = 1
+				if (hasChallenge('m', 11)) amtdiv = 1.5
+				amt = x.div(amtdiv)
+                return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(amt, 3)))
             },
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
