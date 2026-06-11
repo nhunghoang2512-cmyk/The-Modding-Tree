@@ -168,6 +168,13 @@ addLayer("e", {
             },
 		},
 	},
+	doReset(layer) {
+    	let keep = []
+    	if (layer == "ea") {
+        	if (hasMilestone("m", 4)) keep.push("upgrades")
+    	}
+    	layerDataReset("e", keep)
+	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "e", description: "E: Reset for effortless", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
