@@ -112,7 +112,7 @@ addLayer("e", {
                 base2 = x
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
-				eff = softcap(eff, new Decimal("1e25"), 0.1)
+				eff = softcap(eff, new Decimal("1e25"), 0.5)
                 return eff
             },
             tooltip() {
@@ -152,7 +152,7 @@ addLayer("e", {
                 base2 = x
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
-				eff = softcap(eff, new Decimal("5"), 0.1)
+				eff = softcap(eff, new Decimal("5"), 0.5)
                 return eff
             },
             tooltip() {
