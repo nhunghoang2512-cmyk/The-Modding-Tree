@@ -59,7 +59,7 @@ addLayer("m", {
         },
         4: {
             requirementDescription: "100 medium point",
-            effectDescription: "unlock another challenge.",
+            effectDescription: "unlock another challenge, keep EF upgrades on reset.",
             done() { return player.m.points.gte(100) }
         },
 	},
