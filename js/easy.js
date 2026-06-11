@@ -91,7 +91,7 @@ addLayer("ea", {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
            		" effortless point<br>Bought: " +
            		format(getBuyableAmount(this.layer, this.id)) +
-           		"<br>Effect: Boost effortless gain by x" +
+           		"<br>Effect: Boost effortless and skill gain by x" +
            		format(buyableEffect(this.layer, this.id))
             },
             canAfford() {
