@@ -55,7 +55,7 @@ addLayer("m", {
         3: {
             requirementDescription: "25 medium point",
             effectDescription: "unlock a challenge.",
-            done() { return player.m.points.gte(15) }
+            done() { return player.m.points.gte(25) }
         },
 	},
     upgrades: {
