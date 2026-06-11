@@ -83,9 +83,11 @@ addLayer("e", {
             unlocked() { return hasUpgrade("e", 13) },
             cost(x) {
                 exp = 5
+				if (inChallenge('m', 12)) exp = 15
 				if (hasChallenge('m', 11)) exp = 4
 				amtdiv = 1
 				if (hasChallenge('m', 11)) amtdiv = 1.5
+				if (inChallenge('m', 12)) amtdiv = 0.5
 				amt = x.div(amtdiv)
                 return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(amt, 1.05)))
             },
@@ -125,8 +127,10 @@ addLayer("e", {
             cost(x) {
                 exp = 5
 				if (hasChallenge('m', 11)) exp = 4
+				if (inChallenge('m', 12)) exp = 15
 				amtdiv = 1
 				if (hasChallenge('m', 11)) amtdiv = 1.5
+				if (inChallenge('m', 12)) amtdiv = 0.5
 				amt = x.div(amtdiv)
                 return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(amt, 3)))
             },
