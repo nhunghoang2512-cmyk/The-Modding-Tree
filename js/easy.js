@@ -86,7 +86,10 @@ addLayer("ea", {
             cost(x) {
                 exp = 5
 				if (hasChallenge('m', 11)) exp = 4
-                return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(x, 1.1)))
+				amtdiv = 1
+				if (hasChallenge('m', 11)) amtdiv = 1.5
+				amt = x.div(amtdiv)
+                return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(amt, 1.1)))
             },
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
@@ -111,7 +114,7 @@ addLayer("ea", {
                 return eff
             },
             tooltip() {
-                return "Cost Formula: 25000 x 5^(Amt^1.1). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
+                return "Cost Formula: 25000 x" + exp"^(Amt/" + amtdiv"^1.1). Effect formula: " + format(base1) + "^(Amt"+ "^" + expo + ")."
             }
 		},
 	},
