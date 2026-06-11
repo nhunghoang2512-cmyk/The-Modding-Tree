@@ -108,6 +108,39 @@ addLayer("ea", {
             },
             effect(x) {
                 base1 = new Decimal(2)
+				base1 = base1.times(buyableEffect('ea', 12))
+                base2 = x
+                expo = new Decimal(1.005)
+                eff = base1.pow(Decimal.pow(base2, expo))
+                return eff
+            },
+		},
+        12: {
+            title: "Easy Buyable 2",
+            unlocked() { return haschallenge("m", 12) },
+            cost(x) {
+                exp = 5
+				amtdiv = 1
+				amt = x.div(amtdiv)
+                return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(amt, 4)))
+            },
+            display() {
+                return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
+           		" easy point<br>Bought: " +
+           		format(getBuyableAmount(this.layer, this.id)) +
+           		"<br>Effect: Boost EAB1's base by x" +
+           		format(buyableEffect(this.layer, this.id))
+            },
+            canAfford() {
+                return player[this.layer].points.gte(this.cost())
+            },
+            buy() {
+                let cost = new Decimal(1)
+                player[this.layer].points = player[this.layer].points.sub(this.cost().mul(cost))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            effect(x) {
+                base1 = new Decimal(1.2)
                 base2 = x
                 expo = new Decimal(1.005)
                 eff = base1.pow(Decimal.pow(base2, expo))
