@@ -52,11 +52,25 @@ addLayer("m", {
             effectDescription: "gain 100% EA per second, unlock a buyable.",
             done() { return player.m.points.gte(15) }
         },
+        3: {
+            requirementDescription: "25 medium point",
+            effectDescription: "unlock a challenge.",
+            done() { return player.m.points.gte(15) }
+        },
 	},
     upgrades: {
 	},
     buyables: {
 	},
+    challenges: {
+    11: {
+        name: "Medium Challenge 1",
+        challengeDescription: "^0.3 skill gain.",
+        goalDescription: "Reach points.",
+        rewardDescription: "all buyable cost got nerfed.",
+        canComplete: function() {return player.points.gte("1e215")},
+        unlocked(){return hasMilestone("m",3)}
+    },
 	branches:['e'],
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
