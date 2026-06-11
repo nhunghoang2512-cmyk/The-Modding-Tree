@@ -170,7 +170,7 @@ addLayer("e", {
 	},
 	doReset(layer) {
     	let keep = []
-    	if (layer == "ea") {
+    	if (layer == "ea", "m") {
         	if (hasMilestone("m", 4)) keep.push("upgrades")
     	}
     	layerDataReset("e", keep)
