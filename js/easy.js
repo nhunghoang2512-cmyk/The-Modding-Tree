@@ -117,7 +117,7 @@ addLayer("ea", {
 		},
         12: {
             title: "Easy Buyable 2",
-            unlocked() { return haschallenge("m", 12) },
+            unlocked() { return hasChallenge("m", 12) },
             cost(x) {
                 exp = 5
 				amtdiv = 1
