@@ -24,6 +24,9 @@ addLayer("e", {
     	if (hasMilestone('m', 0)) {
         	layers.e.buyables[11].buyMax()
     	}
+    	if (hasChallenge('m', 12)) {
+        	layers.e.buyables[12].buyMax()
+    	}
 	},
     gainMult() {
 		let mult = new Decimal(1)
@@ -141,6 +144,11 @@ addLayer("e", {
 				amt = x.div(amtdiv)
                 return new Decimal(1e10).mul(Decimal.pow(exp, Decimal.pow(amt, 3)))
             },
+			buyMax() {
+    			while (this.canAfford()) {
+        			this.buy()
+    			}
+			},
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
            		" effortless point<br>Bought: " +
