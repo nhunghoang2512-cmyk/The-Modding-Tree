@@ -7,6 +7,13 @@ addLayer("h", {
 		points: new Decimal(0),
     }},
     color: "#FE7C00",
+	tabFormat: {
+    	"ToKTS": {
+        	content: [
+            	["upgrades", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+        	],
+    	},
+	},
     requires: new Decimal(500), // Can be a function that takes requirement increases into account
     resource: "hard point", // Name of prestige currency
     baseResource: "medium point", // Name of resource prestige is based on
