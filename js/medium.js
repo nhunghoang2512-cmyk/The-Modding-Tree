@@ -81,7 +81,7 @@ addLayer("m", {
         	challengeDescription: "buyable cost scales significantly faster.",
         	goalDescription: "Reach 1e28 points.",
         	rewardDescription: "unlock a new buyable, autobuy EFB2.",
-        	canComplete: function() {return player.e.points.gte("1e28")},
+        	canComplete: function() {return player.points.gte("1e28")},
         	unlocked(){return hasMilestone("m",4)}
 		},
     },
