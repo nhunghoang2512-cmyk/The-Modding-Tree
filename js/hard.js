@@ -54,6 +54,12 @@ addLayer("h", {
     milestones: {
 	},
     upgrades: {
+        11: {
+			title: "f1",
+            description: "gain 100% EF per second, keep EF upgreades on reset, autobuy EFB1, 2.",
+            cost() { return new Decimal(1) },
+            unlocked() { return true },
+		},
 	},
     buyables: {
 	},
