@@ -165,6 +165,11 @@ addLayer("e", {
 		},
 	},
     row: 0, // Row the layer is in on the tree (0 is the first row)
+  doReset(resettingLayer) {
+    let keep = [];
+    if (hasMilestone("m", 4) && resettingLayer == "ea") keep.push("upgrades");
+    if (layers[resettingLayer].row > this.row) layerDataReset("e", keep);
+  },
     hotkeys: [
         {key: "e", description: "E: Reset for effortless", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
