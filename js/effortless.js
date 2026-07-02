@@ -21,10 +21,10 @@ addLayer("e", {
         return 0
     },
 	automate() {
-    	if (hasMilestone('m', 0)) {
+    	if (hasMilestone('m', 0) || hasUpgrades('h', 11)) {
         	layers.e.buyables[11].buyMax()
     	}
-    	if (hasChallenge('m', 12)) {
+    	if (hasChallenge('m', 12) || hasUpgrades('h', 11)) {
         	layers.e.buyables[12].buyMax()
     	}
 	},
