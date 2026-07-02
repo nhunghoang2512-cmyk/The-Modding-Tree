@@ -8,6 +8,15 @@ addLayer("h", {
     }},
     color: "#FE7C00",
 	tabFormat: {
+    	"Main": {
+        	content: [
+            	"main-display",
+            	"prestige-button",
+            	"resource-display",
+            	"blank",
+            	"milestones",
+        	],
+    	},
     	"ToKTS": {
         	content: [
             	["upgrades", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
