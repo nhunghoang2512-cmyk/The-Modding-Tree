@@ -21,10 +21,9 @@ addLayer("e", {
         return 0
     },
 	automate() {
-    	if (hasMilestone("m", 0))
-        	setBuyableAmount("e", 11, player.e.points.gte(50) ? player.e.points.div(50).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/1.05).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor().add(1) : getBuyableAmount("e", 11))
-    	if (hasChallenge("m", 12))
-        	setBuyableAmount("e", 12, player.e.points.gte(1e10) ? player.e.points.div(1e10).log(inChallenge("m", 12) ? 15 : hasChallenge("m", 11) ? 4 : 5).pow(1/3).mul(inChallenge("m", 12) ? 0.5 : hasChallenge("m", 11) ? 1.5 : 1).floor().add(1) : getBuyableAmount("e", 12))
+    	if (hasMilestone('m', 0)) {
+        	layers.e.buyables[11].buyMax()
+    	}
 	},
     gainMult() {
 		let mult = new Decimal(1)
@@ -92,6 +91,11 @@ addLayer("e", {
 				amt = x.div(amtdiv)
                 return new Decimal(50).mul(Decimal.pow(exp, Decimal.pow(amt, 1.05)))
             },
+			buyMax() {
+    			while (this.canAfford()) {
+        			this.buy()
+    			}
+			},
 			display() {
     			return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
            			" effortless point<br>Bought: " +
