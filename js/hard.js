@@ -44,9 +44,11 @@ addLayer("h", {
         return exp
     },
     eff() {
+		let base = player.h.points
 		let pow = 3
 		if (hasUpgrade('h', 21)) pow = 4
-        let eff = player.h.points.add(2).pow(pow)
+		if (hasUpgrade('h', 21)) base = base.times(1.25)
+        let eff = base.add(2).pow(pow)
         return eff
     },
     effectDescription() {
@@ -63,7 +65,7 @@ addLayer("h", {
 		},
         21: {
 			title: "f2",
-            description: "EFB1, 2 no longer cost, buff Hard's effect.",
+            description: "buff Hard's effect.",
             cost() { return new Decimal(5) },
       		branches: [11],
             unlocked() { return hasUpgrade('h', 11) },
