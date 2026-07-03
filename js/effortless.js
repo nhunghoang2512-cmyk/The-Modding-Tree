@@ -17,15 +17,15 @@ addLayer("e", {
 		return exp
 	},
     passiveGeneration() {
-		if (hasUpgrades('h', 11)) return 1000
+		if (hasUpgrade('h', 11)) return 1000
 		if (hasMilestone('ea', 0)) return 1
         return 0
     },
 	automate() {
-    	if (hasMilestone('m', 0) || hasUpgrades('h', 11)) {
+    	if (hasMilestone('m', 0) || hasUpgrade('h', 11)) {
         	layers.e.buyables[11].buyMax()
     	}
-    	if (hasChallenge('m', 12) || hasUpgrades('h', 11)) {
+    	if (hasChallenge('m', 12) || hasUpgrade('h', 11)) {
         	layers.e.buyables[12].buyMax()
     	}
 	},
