@@ -48,7 +48,7 @@ addLayer("h", {
 		let pow = 3
 		if (hasUpgrade('h', 21)) pow = 4
 		if (hasUpgrade('h', 21)) base = base.times(1.25)
-        let eff = base.add(2).pow(pow)
+        let eff = base.add(1).pow(pow)
         return eff
     },
     effectDescription() {
