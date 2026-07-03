@@ -60,6 +60,12 @@ addLayer("h", {
             cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
+        12: {
+			title: "f2",
+            description: "EFB1, 2 no longer cost, buff Hard's effect.",
+            cost() { return new Decimal(5) },
+            unlocked() { return true },
+		},
 	},
     buyables: {
 	},
