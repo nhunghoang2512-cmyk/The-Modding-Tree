@@ -19,7 +19,7 @@ addLayer("h", {
     	},
     	"ToKTS": {
         	content: [
-            	["upgrades", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+            	["upgrade-tree", [[11], [21]],
         	],
     	},
 	},
