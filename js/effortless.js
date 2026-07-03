@@ -17,6 +17,7 @@ addLayer("e", {
 		return exp
 	},
     passiveGeneration() {
+		if (hasUpgrades('h', 11)) return 1000
 		if (hasMilestone('ea', 0)) return 1
         return 0
     },
