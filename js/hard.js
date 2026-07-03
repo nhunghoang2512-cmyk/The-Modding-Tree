@@ -45,6 +45,7 @@ addLayer("h", {
     },
     eff() {
 		let pow = 3
+		if (hasUpgrade('h', 21)) pow = 4
         let eff = player.h.points.add(2).pow(pow)
         return eff
     },
