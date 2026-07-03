@@ -56,7 +56,7 @@ addLayer("h", {
     upgrades: {
         11: {
 			title: "f1",
-            description: "gain 100% EF per second, keep EF upgreades on reset, autobuy EFB1, 2.",
+            description: "gain 100,000% EF per second, keep EF upgrades on reset, autobuy EFB1, 2.",
             cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
