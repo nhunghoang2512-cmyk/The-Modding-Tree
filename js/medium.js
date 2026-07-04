@@ -68,6 +68,11 @@ addLayer("m", {
             effectDescription: "unlock a new layer.",
             done() { return player.m.points.gte(500) }
         },
+        6: {
+            requirementDescription: "5000 medium point",
+            effectDescription: "autobuy EAB1, 2, ^1.05 points.",
+            done() { return player.m.points.gte(5000) }
+        },
 	},
     upgrades: {
         11: {
