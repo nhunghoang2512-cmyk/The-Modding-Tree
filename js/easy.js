@@ -16,6 +16,14 @@ addLayer("ea", {
 		let exp = new Decimal(0.1)
 		return exp
 	},
+	automate() {
+    	if (hasMilestone('m', 6)) {
+        	layers.ea.buyables[11].buyMax()
+    	}
+    	if (hasMilestone('m', 6)) {
+        	layers.ea.buyables[12].buyMax()
+    	}
+	},
     passiveGeneration() {
 		if (hasMilestone('m', 2)) return 1
         return 0
