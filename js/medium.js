@@ -22,6 +22,7 @@ addLayer("m", {
     gainMult() {
 		let mult = new Decimal(1)
 		if (hasMilestone('m', 1)) mult = mult.times(2)
+		if (hasUpgrade('m', 11)) mult = mult.times(upgradeEffect("m", 11))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
