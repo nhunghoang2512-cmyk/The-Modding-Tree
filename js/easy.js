@@ -91,6 +91,11 @@ addLayer("ea", {
 				amt = x.div(amtdiv)
                 return new Decimal(25000).mul(Decimal.pow(exp, Decimal.pow(amt, 1.1)))
             },
+			buyMax() {
+    			while (this.canAfford()) {
+        			this.buy()
+    			}
+			},
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
            		" easy point<br>Bought: " +
@@ -124,6 +129,11 @@ addLayer("ea", {
 				amt = x.div(amtdiv)
                 return new Decimal(1e5).mul(Decimal.pow(exp, Decimal.pow(amt, 4)))
             },
+			buyMax() {
+    			while (this.canAfford()) {
+        			this.buy()
+    			}
+			},
             display() {
                 return "Cost: " + format(tmp[this.layer].buyables[this.id].cost) +
            		" easy point<br>Bought: " +
