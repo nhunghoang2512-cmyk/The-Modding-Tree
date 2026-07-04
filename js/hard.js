@@ -65,7 +65,7 @@ addLayer("h", {
 		},
         21: {
 			title: "f2",
-            description: "buff Hard's effect.",
+            description: "buff Hard's effect, unlock new upgrades.",
             cost() { return new Decimal(5) },
       		branches: [11],
             unlocked() { return hasUpgrade('h', 11) },
