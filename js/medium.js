@@ -69,6 +69,23 @@ addLayer("m", {
         },
 	},
     upgrades: {
+        11: {
+			title: "1",
+            description: "medium point boost itself.",
+            cost() { return new Decimal(500) },
+		    effect() {
+			exp = 0.25
+			let eff = player[this.layer].points.add(1).pow(exp)
+        	return eff
+    		},
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+			tooltip() {
+			return "medium points^"+exp
+			},
+            unlocked() { return hasUpgrade("h", 21) },
+		},
 	},
     buyables: {
 	},
