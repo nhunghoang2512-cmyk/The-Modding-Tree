@@ -50,6 +50,7 @@ gain = gain.times(layers.m.eff())
 if (hasMilestone("m", 1)) gain = gain.times(100)
 gain = gain.times(buyableEffect('ea', 11))
 gain = gain.times(layers.h.eff())
+if (hasMilestone('m', 6)) gain = gain.pow(1.05)
 
 //challenge
 if (inChallenge('m', 11)) gain = gain.pow(0.3)
