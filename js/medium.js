@@ -73,6 +73,11 @@ addLayer("m", {
             effectDescription: "autobuy EAB1, 2, ^1.05 points.",
             done() { return player.m.points.gte(5000) }
         },
+        6: {
+            requirementDescription: "25000 medium point",
+            effectDescription: "^1.1 EA, M.",
+            done() { return player.m.points.gte(25000) }
+        },
 	},
     upgrades: {
         11: {
