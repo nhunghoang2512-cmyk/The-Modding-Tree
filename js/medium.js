@@ -27,7 +27,7 @@ addLayer("m", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
 		let exp = new Decimal(1)
-		if (hasMilestone('m', 7)) exp = exp.times(1.1)
+		if (hasMilestone('m', 7)) exp = exp.times(1.25)
         return exp
     },
     eff() {
@@ -76,7 +76,7 @@ addLayer("m", {
         },
         7: {
             requirementDescription: "25000 medium point",
-            effectDescription: "^1.1 EA, M.",
+            effectDescription: "^1.25 EA, M.",
             done() { return player.m.points.gte(25000) }
         },
 	},
