@@ -27,6 +27,7 @@ addLayer("m", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
 		let exp = new Decimal(1)
+		if (hasMilestone('m', 7)) exp = exp.times(1.1)
         return exp
     },
     eff() {
@@ -73,7 +74,7 @@ addLayer("m", {
             effectDescription: "autobuy EAB1, 2, ^1.05 points.",
             done() { return player.m.points.gte(5000) }
         },
-        6: {
+        7: {
             requirementDescription: "25000 medium point",
             effectDescription: "^1.1 EA, M.",
             done() { return player.m.points.gte(25000) }
