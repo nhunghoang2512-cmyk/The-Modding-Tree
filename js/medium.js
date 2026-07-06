@@ -92,6 +92,7 @@ addLayer("m", {
             cost() { return new Decimal(500) },
 		    effect() {
 			exp = 0.25
+			if (hasChallenge('m', 21)) exp = 0.4
 			let eff = player[this.layer].points.add(1).pow(exp)
         	return eff
     		},
@@ -126,7 +127,7 @@ addLayer("m", {
     	21: {
         	name: "Medium Challenge 2",
         	challengeDescription: "^0.2 point, ^0.4 EF.",
-        	goalDescription: "Reach EF points.",
+        	goalDescription: "Reach 1e20 EF points.",
         	rewardDescription: "buff 1 eff.",
         	canComplete: function() {return player.e.points.gte("1e20")},
         	unlocked(){return hasMilestone("m",8)}
