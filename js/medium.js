@@ -128,7 +128,7 @@ addLayer("m", {
         	challengeDescription: "^0.2 point, ^0.4 EF.",
         	goalDescription: "Reach EF points.",
         	rewardDescription: "buff 1 eff.",
-        	canComplete: function() {return player.e.points.gte("1e123")},
+        	canComplete: function() {return player.e.points.gte("1e20")},
         	unlocked(){return hasMilestone("m",8)}
 		},
     },
