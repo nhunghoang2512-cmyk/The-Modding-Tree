@@ -126,9 +126,9 @@ addLayer("m", {
     	21: {
         	name: "Medium Challenge 2",
         	challengeDescription: "^0.8 point, ^0.6 EF.",
-        	goalDescription: "Reach  points.",
-        	rewardDescription: "unlock a new buyable, autobuy EFB2.",
-        	canComplete: function() {return player.points.gte("1e28")},
+        	goalDescription: "Reach EF points.",
+        	rewardDescription: "buff 1 eff.",
+        	canComplete: function() {return player.e.points.gte("1e123")},
         	unlocked(){return hasMilestone("m",8)}
 		},
     },
