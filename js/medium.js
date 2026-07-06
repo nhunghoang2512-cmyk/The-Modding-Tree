@@ -79,6 +79,11 @@ addLayer("m", {
             effectDescription: "^1.25 EA, M.",
             done() { return player.m.points.gte(25000) }
         },
+        8: {
+            requirementDescription: "500000 medium point",
+            effectDescription: "unlock another challenges.",
+            done() { return player.m.points.gte(500000) }
+        },
 	},
     upgrades: {
         11: {
@@ -117,6 +122,14 @@ addLayer("m", {
         	rewardDescription: "unlock a new buyable, autobuy EFB2.",
         	canComplete: function() {return player.points.gte("1e28")},
         	unlocked(){return hasMilestone("m",4)}
+		},
+    	21: {
+        	name: "Medium Challenge 2",
+        	challengeDescription: "^0.8 point, ^0.6 EF.",
+        	goalDescription: "Reach  points.",
+        	rewardDescription: "unlock a new buyable, autobuy EFB2.",
+        	canComplete: function() {return player.points.gte("1e28")},
+        	unlocked(){return hasMilestone("m",8)}
 		},
     },
 	branches:['e'],
