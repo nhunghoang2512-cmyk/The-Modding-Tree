@@ -40,7 +40,7 @@ addLayer("e", {
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
 		let exp = new Decimal(1)
-		if (inChallenge('m', 21)) exp = exp.times(0.6)
+		if (inChallenge('m', 21)) exp = exp.times(0.4)
         return exp
     },
     milestones: {
