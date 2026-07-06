@@ -54,7 +54,7 @@ function getPointGen() {
 
 //challenge
 	if (inChallenge('m', 11)) gain = gain.pow(0.3)
-	if (inChallenge('m', 21)) gain = gain.pow(0.9)
+	if (inChallenge('m', 21)) gain = gain.pow(0.2)
 	return gain
 }
 
