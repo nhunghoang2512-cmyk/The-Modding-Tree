@@ -38,22 +38,23 @@ function canGenPoints(){
 
 // Calculate points/sec!
 function getPointGen() {
-let gain = new Decimal(1)
-if (hasUpgrade("e", 11)) gain = gain.times(5)
-if (hasUpgrade("e", 12)) gain = gain.times(upgradeEffect("e", 12))
-gain = gain.times(buyableEffect('e', 11))
-if (hasUpgrade("e", 14)) gain = gain.times(2)
-if (hasUpgrade("ea", 11)) gain = gain.times(5)
-if (hasUpgrade("ea", 13)) gain = gain.times(10)
-if (hasUpgrade("ea", 14)) gain = gain.times(upgradeEffect("ea", 14))
-gain = gain.times(layers.m.eff())
-if (hasMilestone("m", 1)) gain = gain.times(100)
-gain = gain.times(buyableEffect('ea', 11))
-gain = gain.times(layers.h.eff())
-if (hasMilestone('m', 6)) gain = gain.pow(1.05)
+	let gain = new Decimal(1)
+	if (hasUpgrade("e", 11)) gain = gain.times(5)
+	if (hasUpgrade("e", 12)) gain = gain.times(upgradeEffect("e", 12))
+	gain = gain.times(buyableEffect('e', 11))
+	if (hasUpgrade("e", 14)) gain = gain.times(2)
+	if (hasUpgrade("ea", 11)) gain = gain.times(5)
+	if (hasUpgrade("ea", 13)) gain = gain.times(10)
+	if (hasUpgrade("ea", 14)) gain = gain.times(upgradeEffect("ea", 14))
+	gain = gain.times(layers.m.eff())
+	if (hasMilestone("m", 1)) gain = gain.times(100)
+	gain = gain.times(buyableEffect('ea', 11))
+	gain = gain.times(layers.h.eff())
+	if (hasMilestone('m', 6)) gain = gain.pow(1.05)
 
 //challenge
-if (inChallenge('m', 11)) gain = gain.pow(0.3)
+	if (inChallenge('m', 11)) gain = gain.pow(0.3)
+	if (inChallenge('m', 21)) gain = gain.pow(0.9)
 	return gain
 }
 
