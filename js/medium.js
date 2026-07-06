@@ -125,7 +125,7 @@ addLayer("m", {
 		},
     	21: {
         	name: "Medium Challenge 2",
-        	challengeDescription: "^0.8 point, ^0.6 EF.",
+        	challengeDescription: "^0.2 point, ^0.4 EF.",
         	goalDescription: "Reach EF points.",
         	rewardDescription: "buff 1 eff.",
         	canComplete: function() {return player.e.points.gte("1e123")},
