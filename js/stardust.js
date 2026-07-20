@@ -43,5 +43,5 @@ addLayer("s", {
     hotkeys: [
         {key: "s", description: "S: Reset for stardust", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return hasMilestone('b', 1)},
+    layerShown(){return true},
 })
