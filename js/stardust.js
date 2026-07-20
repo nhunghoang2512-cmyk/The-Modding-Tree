@@ -7,13 +7,13 @@ addLayer("s", {
 		points: new Decimal(0),
     }},
     color: "#a6a377",
-    requires: new Decimal(1e12), // Can be a function that takes requirement increases into account
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "stardust", // Name of prestige currency
-    baseResource: "atoms", // Name of resource prestige is based on
+    baseResource: "points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = new Decimal(0.5)
+		let exp = new Decimal(0.1)
 		return exp
 	},
     passiveGeneration() {
@@ -30,12 +30,6 @@ addLayer("s", {
     milestones: {
 	},
     upgrades: {
-        11: {
-			title: "1",
-            description: "x5 atoms.",
-            cost() { return new Decimal(1) },
-            unlocked() { return true },
-		},
 	},
     buyables: {
 	},
