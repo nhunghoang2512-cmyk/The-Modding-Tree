@@ -13,13 +13,20 @@ addLayer("p", {
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
 	exponent() {
-		let exp = new Decimal(0.1)
+		let exp = new Decimal(0.9)
 		return exp
 	},
 	base() {
 		let base = 10
 		return base
 	},
+    eff() {
+        let eff = (player.a.points.add(1).log10().add(1)).pow(2)
+        return eff
+    },
+    effectDescription() {
+    return `Base Points Gain ${format(layers.a.eff())}`
+},
     passiveGeneration() {
         return 0
     },
