@@ -49,11 +49,11 @@ addLayer("p", {
 		},
         12: {
 			title: "2",
-            description: "point boost itself.",
+            description: "point boost itself(boost point gain not base btw).",
             cost() { return new Decimal(2) },
 		    effect() {
 			base = 3
-			let eff = Decimal.log(player.points.add(1), base)
+			let eff = Decimal.log(player.points.add(1), base).add(1)
         	return eff
     },
 			effectDisplay() {
@@ -61,7 +61,7 @@ addLayer("p", {
 			},
 
 			tooltip() {
-			return "(log<sub>3</sub>(points))"
+			return "(log<sub>3</sub>(points+1))"
 			},
             unlocked() { return hasUpgrade('p', 11) },
 		},
