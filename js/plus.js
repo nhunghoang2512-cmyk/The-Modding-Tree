@@ -21,7 +21,7 @@ addLayer("p", {
 		return base
 	},
     eff() {
-        let eff = (player.points.add(1).log10().add(1)).pow(2)
+        let eff = (player.p.points.add(1).log10().add(1)).pow(2)
         return eff
     },
     effectDescription() {
