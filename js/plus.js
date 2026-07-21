@@ -21,11 +21,11 @@ addLayer("p", {
 		return base
 	},
     eff() {
-        let eff = (player.a.points.add(1).log10().add(1)).pow(2)
+        let eff = (player.points.add(1).log10().add(1)).pow(2)
         return eff
     },
     effectDescription() {
-    return `Base Points Gain ${format(layers.a.eff())}`
+    return `Base Points Gain ${format(layers.p.eff())}`
 },
     passiveGeneration() {
         return 0
