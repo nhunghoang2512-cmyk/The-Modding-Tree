@@ -47,6 +47,24 @@ addLayer("p", {
             cost() { return new Decimal(1) },
             unlocked() { return true },
 		},
+        12: {
+			title: "2",
+            description: "point boost itself.",
+            cost() { return new Decimal(2) },
+		    effect() {
+			base = 2
+			let eff = Decimal.pow(Decimal.log(player.points.add(1), base), 2)
+        	return eff
+    },
+			effectDisplay() {
+			return format(upgradeEffect(this.layer, this.id))+"x"
+			},
+
+			tooltip() {
+			return "(log<sub>5</sub>(points))^2"
+			},
+            unlocked() { return hasUpgrade('p', 11) },
+		},
 	},
     buyables: {
 	},
