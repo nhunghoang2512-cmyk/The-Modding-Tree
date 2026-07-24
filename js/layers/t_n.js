@@ -21,7 +21,7 @@ addLayer("tn", {
 		return base
 	},
     eff() {
-        let eff = (player.tn.points.plus(1)).times.(player.tn.points.plus(2))div(2)
+        let eff = (player.tn.points.plus(1)).times(player.tn.points.plus(2)).div(2)
         return eff
     },
     effectDescription() {
