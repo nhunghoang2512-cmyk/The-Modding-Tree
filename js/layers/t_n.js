@@ -53,6 +53,6 @@ addLayer("tn", {
     row: 1, // Row the layer is in on the tree (0 is the first row)
     layerShown(){
       let visible = false
-      if (player.p.point.gte(3) || player.tn.unlocked) visible = true
+      if (player.p.points.gte(3) || player.tn.unlocked) visible = true
       return visible},
 })
